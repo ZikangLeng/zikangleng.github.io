@@ -4,8 +4,6 @@ permalink: /news/
 author_profile: true
 ---
 
-## Recent News
-
 - **📖 Oct, 2024**: Our paper - [Emotion Recognition on the Go: Utilizing Wearable IMUs for Personalized Emotion Recognition](https://dl.acm.org/doi/abs/10.1145/3675094.3678452) have been accepted and presented at [HASCA](http://hasca2024.hasc.jp/) within [UbiComp/ISWC 2024](https://www.ubicomp.org/ubicomp-iswc-2024/).
 
 - **🏆 Oct, 2024**: Our paper - [More Data for People with Disabilities! Comparing Data Collection Efforts for Wheelchair Transportation Mode Detection](https://dl.acm.org/doi/abs/10.1145/3675095.3676617) have been published at [ISWC](https://dl.acm.org/doi/proceedings/10.1145/3675095) and has been presented at [UbiComp/ISWC 2024](https://www.ubicomp.org/ubicomp-iswc-2024/). The paper was recognized with **Best Paper Nomination**.

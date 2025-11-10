@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I’m a first-year Ph.D. student in Computer Science at Georgia Tech’s School of Interactive Computing, advised by [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz). My research is supported by the National Science Foundation Graduate Research Fellowship (NSF GRFP).
+I’m a second-year Ph.D. student in Computer Science at Georgia Tech’s School of Interactive Computing, advised by [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz). My research is supported by the National Science Foundation Graduate Research Fellowship (NSF GRFP).
 
 I completed my B.S. in Computer Science at Georgia Tech in 2024, where I worked with [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz)
 and [Prof. Hyeokhyen Kwon](https://kwonvitallab.github.io/members/hyeok-kwon.html) on generating synthetic sensor data for human activity recognition using text-based generative models. I’m broadly interested in how AI and sensing technologies can model and understand human behavior in realistic, privacy-preserving ways.

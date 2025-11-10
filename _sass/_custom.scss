@@ -54,6 +54,7 @@
   flex-direction: column;
   gap: 0.5rem;
   min-width: 0;
+  width: 100%;
 }
 
 .publication-header {
@@ -62,6 +63,7 @@
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .publication-title {
@@ -69,7 +71,8 @@
   font-size: 1.1rem;
   line-height: 1.4;
   flex: 1;
-  min-width: 200px;
+  min-width: 0;
+  width: 100%;
 }
 
 .publication-title a {
@@ -466,9 +469,12 @@ html.dark-mode body {
   background-color: #1a1a1a !important;
 }
 
-/* Ensure sidebar and masthead use secondary dark shade consistently */
+/* Ensure sidebar matches main background, masthead uses secondary dark shade */
 html.dark-mode .sidebar,
-html.dark-mode .sidebar__right,
+html.dark-mode .sidebar__right {
+  background-color: #1a1a1a !important;
+}
+
 html.dark-mode .masthead,
 html.dark-mode .masthead__inner-wrap {
   background-color: #2d2d2d !important;
@@ -493,6 +499,40 @@ html.dark-mode .masthead__inner-wrap {
 
 .dark-mode .masthead__inner-wrap {
   background-color: #2d2d2d !important;
+}
+
+.dark-mode .masthead__menu {
+  background-color: #2d2d2d !important;
+}
+
+.dark-mode .greedy-nav {
+  background-color: #2d2d2d !important;
+}
+
+.dark-mode .masthead__actions {
+  background-color: transparent !important;
+}
+
+.dark-mode .visible-links {
+  background-color: transparent !important;
+}
+
+.dark-mode .greedy-nav button {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .greedy-nav button:hover {
+  background-color: #404040 !important;
+}
+
+.dark-mode .navicon {
+  background-color: #e0e0e0 !important;
+}
+
+.dark-mode .navicon:before,
+.dark-mode .navicon:after {
+  background-color: #e0e0e0 !important;
 }
 
 .dark-mode .masthead a {
@@ -658,11 +698,11 @@ html.dark-mode .masthead__inner-wrap {
 }
 
 .dark-mode .sidebar__right {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .sidebar {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .author__content {
@@ -696,6 +736,10 @@ html.dark-mode .masthead__inner-wrap {
   color: #52adc8 !important;
 }
 
+.dark-mode .author__urls-wrapper {
+  background-color: transparent !important;
+}
+
 .dark-mode .author__urls-wrapper button {
   color: #e0e0e0 !important;
   background-color: transparent !important;
@@ -703,6 +747,7 @@ html.dark-mode .masthead__inner-wrap {
 
 .dark-mode .author__urls-wrapper button:hover {
   color: #52adc8 !important;
+  background-color: transparent !important;
 }
 
 /* Fix navigation dropdowns */
