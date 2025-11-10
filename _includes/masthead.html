@@ -8,7 +8,11 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg">
             <a href="{{ base_path }}/" class="masthead__title-link">
-              <img src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" class="masthead__icon">
+              {% if site.author.header_icon %}
+                <img src="{{ base_path }}/images/{{ site.author.header_icon }}" alt="{{ site.title }}" class="masthead__icon">
+              {% else %}
+                <img src="{{ base_path }}/images/{{ site.author.avatar }}" alt="{{ site.title }}" class="masthead__icon">
+              {% endif %}
               <span>{{ site.title }}</span>
             </a>
           </li>

@@ -81,7 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Zikang Leng"
-  avatar           : "Zikang Leng_86A5691.jpg"
+  avatar           : "Zikang Leng_86A5691.jpg"  # Large icon for sidebar
+  header_icon      : "icon.png"  # Small icon for header (next to name)
   bio              : "CS PhD Student at Georgia Tech | Research in Computer Vision & Ubiquitous Computing"
   location         : "Atlanta, Georgia"
   employer         :
