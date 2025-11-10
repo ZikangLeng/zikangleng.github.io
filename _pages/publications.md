@@ -44,6 +44,18 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
+              <a href="https://openreview.net/pdf?id=v0ZDvVLro6">Towards More Equitable Ulcer Recognition Models: A Dataset of Naturalistic Foot Images from People of Color Living with Diabetes</a>
+            </h3>
+          </div>
+          <p class="publication-authors">Cynthia Baseman, Yingtian Shi, <strong>Zikang Leng</strong>, Yaqi Liu, Gabriel Santamarina, Marcos C Schechter, Maya Fayfman, Thomas Ploetz, Rosa I Arriaga</p>
+          <p class="publication-venue">IEEE EMBS BHI, 2025</p>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-content">
+          <div class="publication-header">
+            <h3 class="publication-title">
               <a href="https://dl.acm.org/doi/abs/10.1145/3726302.3730174">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
             </h3>
           </div>
