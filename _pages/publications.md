@@ -40,20 +40,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           <a href="https://dl.acm.org/doi/10.1145/3678545">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
         </h3>
       </div>
-      <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Johanne R Trippas, Damiano Spina<</p>
-      <p class="publication-venue">IMWUT</p>
-    </div>
-  </div>
-
-  <div class="publication-card">
-    <div class="publication-content">
-      <div class="publication-header">
-        <h3 class="publication-title">
-          <a href="https://dl.acm.org/doi/10.1145/3597638.3614491">FingerSpeller: Camera-Free Text Entry Using Smart Rings for American Sign Language Fingerspelling Recognition</a>
-        </h3>
-      </div>
-      <p class="publication-authors">David Martin*, <strong>Zikang Leng*</strong>, Tan Gemicioglu, Jon Womack, Jocelyn Heath, William C Neubauer, Hyeokhyen Kwon, Thomas Plötz, Thad Starner</p>
-      <p class="publication-venue">ASSETS, 2023</p>
+      <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Johanne R Trippas, Damiano Spina</p>
+      <p class="publication-venue">SIGIR, 2025</p>
     </div>
   </div>
     
@@ -90,7 +78,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
         </h3>
       </div>
       <p class="publication-authors"><strong>Zikang Leng</strong>, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz</p>
-      <p class="publication-venue">IMWUT</p>
+      <p class="publication-venue">IMWUT, 2025</p>
     </div>
   </div>
 
