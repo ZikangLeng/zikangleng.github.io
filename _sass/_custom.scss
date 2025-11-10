@@ -566,15 +566,23 @@ html.dark-mode body {
 /* Ensure sidebar and masthead match main background - highest specificity */
 html.dark-mode .sidebar,
 html.dark-mode .sidebar__right,
-html.dark-mode .sidebar.sticky {
+html.dark-mode .sidebar.sticky,
+html.dark-mode body .sidebar,
+html.dark-mode body .sidebar__right {
   background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
 }
 
 html.dark-mode .masthead,
 html.dark-mode .masthead__inner-wrap,
 html.dark-mode .masthead__menu,
-html.dark-mode .greedy-nav {
+html.dark-mode .greedy-nav,
+html.dark-mode body .masthead,
+html.dark-mode body .masthead__inner-wrap,
+html.dark-mode body .masthead__menu,
+html.dark-mode body .greedy-nav {
   background-color: #1a1a1a !important;
+  background: #1a1a1a !important;
 }
 
 /* Make masthead child elements transparent so background shows through */
