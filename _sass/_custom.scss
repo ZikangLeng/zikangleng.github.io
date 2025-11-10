@@ -563,14 +563,39 @@ html.dark-mode body {
   background-color: #1a1a1a !important;
 }
 
-/* Ensure sidebar and masthead match main background */
+/* Ensure sidebar and masthead match main background - highest specificity */
 html.dark-mode .sidebar,
-html.dark-mode .sidebar__right {
+html.dark-mode .sidebar__right,
+html.dark-mode .sidebar.sticky {
   background-color: #1a1a1a !important;
 }
 
 html.dark-mode .masthead,
-html.dark-mode .masthead__inner-wrap {
+html.dark-mode .masthead__inner-wrap,
+html.dark-mode .masthead__menu,
+html.dark-mode .greedy-nav {
+  background-color: #1a1a1a !important;
+}
+
+/* Make masthead child elements transparent so background shows through */
+html.dark-mode .masthead > *,
+html.dark-mode .masthead__inner-wrap > *,
+html.dark-mode .masthead__menu > *,
+html.dark-mode .greedy-nav > * {
+  background-color: transparent !important;
+}
+
+/* Override any child elements that might have backgrounds - make them transparent */
+html.dark-mode .sidebar > *,
+html.dark-mode .sidebar [itemscope],
+html.dark-mode .sidebar .author__avatar,
+html.dark-mode .sidebar .author__content,
+html.dark-mode .sidebar .author__urls-wrapper {
+  background-color: transparent !important;
+}
+
+/* Author URLs dropdown should match sidebar when visible */
+html.dark-mode .sidebar .author__urls {
   background-color: #1a1a1a !important;
 }
 
@@ -601,6 +626,15 @@ html.dark-mode .masthead__inner-wrap {
 
 .dark-mode .greedy-nav {
   background-color: #1a1a1a !important;
+}
+
+/* Ensure all masthead child elements are transparent (except the masthead itself) */
+.dark-mode .masthead > * {
+  background-color: transparent !important;
+}
+
+.dark-mode .masthead__inner-wrap > * {
+  background-color: transparent !important;
 }
 
 .dark-mode .masthead__actions {
@@ -808,6 +842,26 @@ html.dark-mode .masthead__inner-wrap {
   background-color: #1a1a1a !important;
 }
 
+/* Ensure all sidebar child elements are transparent (except the sidebar itself) */
+.dark-mode .sidebar > * {
+  background-color: transparent !important;
+}
+
+.dark-mode .sidebar.sticky {
+  background-color: #1a1a1a !important;
+}
+
+/* Author profile container */
+.dark-mode .sidebar [itemscope] {
+  background-color: transparent !important;
+}
+
+.dark-mode .sidebar .author__avatar,
+.dark-mode .sidebar .author__content,
+.dark-mode .sidebar .author__urls-wrapper {
+  background-color: transparent !important;
+}
+
 .dark-mode .author__content {
   color: #e0e0e0 !important;
 }
@@ -822,13 +876,13 @@ html.dark-mode .masthead__inner-wrap {
 
 /* Fix sidebar author URLs dropdown */
 .dark-mode .author__urls {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
   border-color: #404040 !important;
   color: #e0e0e0 !important;
 }
 
 .dark-mode .author__urls:after {
-  border-color: #2d2d2d transparent !important;
+  border-color: #1a1a1a transparent !important;
 }
 
 .dark-mode .author__urls a {
@@ -855,11 +909,11 @@ html.dark-mode .masthead__inner-wrap {
 
 /* Fix navigation dropdowns */
 .dark-mode .greedy-nav .visible-links {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .greedy-nav__toggle {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
   color: #e0e0e0 !important;
 }
 
@@ -868,7 +922,7 @@ html.dark-mode .masthead__inner-wrap {
 }
 
 .dark-mode .hidden-links {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
   border-color: #404040 !important;
 }
 
