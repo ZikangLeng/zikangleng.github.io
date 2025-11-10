@@ -426,13 +426,14 @@ blockquote {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #2d2d2d;
+  background-color: #ccc;
   transition: 0.3s;
   border-radius: 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 4px;
+  border: 2px solid #666;
 }
 
 .toggle-slider:before {
@@ -453,7 +454,8 @@ blockquote {
 }
 
 .dark-mode-switch:checked + .toggle-slider {
-  background-color: #2d2d2d;
+  background-color: #4a4a4a;
+  border-color: #666;
 }
 
 .dark-mode-switch:checked + .toggle-slider:before {
@@ -480,6 +482,15 @@ blockquote {
   right: 8px;
   color: #fff;
   opacity: 0;
+}
+
+/* Ensure icons are visible in dark mode */
+.dark-mode .toggle-icon-sun {
+  color: #f39c12 !important;
+}
+
+.dark-mode .toggle-icon-moon {
+  color: #fff !important;
 }
 
 /* Light mode: sun visible on left, moon hidden */
@@ -516,10 +527,13 @@ blockquote {
 /* Light mode - toggle background is lighter */
 .dark-mode-toggle .toggle-slider {
   background-color: #ccc;
+  border: 2px solid #999;
 }
 
+/* Dark mode - toggle background is visible gray */
 .dark-mode .dark-mode-toggle .toggle-slider {
-  background-color: #2d2d2d;
+  background-color: #4a4a4a !important;
+  border-color: #666 !important;
 }
 
 /* Dark Mode Styles - Apply to html element with highest specificity */
@@ -549,7 +563,7 @@ html.dark-mode body {
   background-color: #1a1a1a !important;
 }
 
-/* Ensure sidebar matches main background, masthead uses secondary dark shade */
+/* Ensure sidebar and masthead match main background */
 html.dark-mode .sidebar,
 html.dark-mode .sidebar__right {
   background-color: #1a1a1a !important;
@@ -557,7 +571,7 @@ html.dark-mode .sidebar__right {
 
 html.dark-mode .masthead,
 html.dark-mode .masthead__inner-wrap {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 /* Override default white backgrounds */
@@ -573,20 +587,20 @@ html.dark-mode .masthead__inner-wrap {
 }
 
 .dark-mode .masthead {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
   border-bottom: 1px solid #404040 !important;
 }
 
 .dark-mode .masthead__inner-wrap {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .masthead__menu {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .greedy-nav {
-  background-color: #2d2d2d !important;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .masthead__actions {
@@ -747,7 +761,7 @@ html.dark-mode .masthead__inner-wrap {
 }
 
 .dark-mode .sidebar {
-  background-color: #2d2d2d;
+  background-color: #1a1a1a !important;
 }
 
 .dark-mode .author__avatar img {
@@ -773,7 +787,7 @@ html.dark-mode .masthead__inner-wrap {
 
 .dark-mode .page__footer,
 .dark-mode footer {
-  background-color: #2d2d2d;
+  background-color: #1a1a1a !important;
   color: #b0b0b0;
   border-top: 1px solid #404040;
 }
