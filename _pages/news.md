@@ -4,11 +4,11 @@ permalink: /news/
 author_profile: true
 ---
 
-- **📖 Dec, 2024**: Our paper - [Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks](https://arxiv.org/pdf/2510.06658) have been accepted and presented at [SIGIR-AP 2025](https://www.sigir-ap.org/sigir-ap-2025/). 
+- **📖 Dec, 2025**: Our paper - [Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks](https://arxiv.org/pdf/2510.06658) have been accepted and presented at [SIGIR-AP 2025](https://www.sigir-ap.org/sigir-ap-2025/). 
 
 - **📖 Nov, 2025**: Our paper - [AgentSense: Virtual Sensor Data Generation Using LLM Agent in Simulated Home Environments](https://arxiv.org/pdf/2506.11773?) have been accepted at [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/) 
 
-- **📖 Jul, 2024**: Our paper - [Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data](https://dl.acm.org/doi/pdf/10.1145/3726302.3730174) have been accepted and presented at [SIGIR 2025](https://sigir2025.dei.unipd.it/).
+- **📖 Jul, 2025**: Our paper - [Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data](https://dl.acm.org/doi/pdf/10.1145/3726302.3730174) have been accepted and presented at [SIGIR 2025](https://sigir2025.dei.unipd.it/).
 
 - **📖 Oct, 2024**: Our paper - [Emotion Recognition on the Go: Utilizing Wearable IMUs for Personalized Emotion Recognition](https://dl.acm.org/doi/abs/10.1145/3675094.3678452) have been accepted and presented at [HASCA](http://hasca2024.hasc.jp/) within [UbiComp/ISWC 2024](https://www.ubicomp.org/ubicomp-iswc-2024/).
 

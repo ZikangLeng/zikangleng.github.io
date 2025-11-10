@@ -10,9 +10,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
 
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/wheelchair.png" alt="AgentSense">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -25,9 +22,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/emotion.png" alt="LLM Evaluation">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -40,9 +34,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/imugpt2.png" alt="Famiarlity Detection">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -55,9 +46,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/fingerspeller.png" alt="FingerSpeller">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -70,9 +58,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
     
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/wheelchair.png" alt="Wheelchair Transportation Mode Detection">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -86,9 +71,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/emotion.png" alt="Emotion Recognition">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -101,9 +83,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/imugpt2.png" alt="IMUGPT 2.0">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -116,9 +95,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/fingerspeller.png" alt="FingerSpeller">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -131,9 +107,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/genai.png" alt="Generative AI for HAR">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -146,9 +119,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/imugpt.png" alt="IMUGPT">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -162,9 +132,6 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   </div>
 
   <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/msi.png" alt="Virtual Acceleration Data">
-    </div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
