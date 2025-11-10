@@ -8,10 +8,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
 
 <div class="publications-container">
   
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/wheelchair.png" alt="Wheelchair Transportation Mode Detection">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/wheelchair.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -24,10 +22,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/emotion.png" alt="Emotion Recognition">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/emotion.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -39,10 +35,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/imugpt2.png" alt="IMUGPT 2.0">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/imugpt2.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -54,10 +48,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/fingerspeller.png" alt="FingerSpeller">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/fingerspeller.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -69,10 +61,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/genai.png" alt="Generative AI for HAR">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/genai.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -84,10 +74,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/imugpt.png" alt="IMUGPT">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/imugpt.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">
@@ -100,10 +88,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
     </div>
   </div>
 
-  <div class="publication-card">
-    <div class="publication-image">
-      <img src="../images/msi.png" alt="Virtual Acceleration Data">
-    </div>
+  <div class="publication-card" style="background-image: url('../images/msi.png');">
+    <div class="publication-gradient"></div>
     <div class="publication-content">
       <div class="publication-header">
         <h3 class="publication-title">

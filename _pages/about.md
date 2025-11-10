@@ -8,16 +8,16 @@ redirect_from:
   - /about.html
 ---
 
-I am a first year CS PhD student with the School of Interactive Computing at Georgia Tech, Atlanta. I am advised by [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz). My research is supported by the National Science Foundation Graduate Research Fellowship.
+I’m a first-year Ph.D. student in Computer Science at Georgia Tech’s School of Interactive Computing, advised by [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz). My research is supported by the National Science Foundation Graduate Research Fellowship (NSF GRFP).
 
-I obtained my Bachelor's degree from Georgia Tech in May 2024, where my thesis focused on generating synthetic sensor data for human activity recognition via texts. I was advised by [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz)
-and [Prof. Hyeokhyen Kwon](https://kwonvitallab.github.io/members/hyeok-kwon.html).
+I completed my B.S. in Computer Science at Georgia Tech in 2024, where I worked with [Prof. Thomas Ploetz](https://www.cc.gatech.edu/people/thomas-ploetz)
+and [Prof. Hyeokhyen Kwon](https://kwonvitallab.github.io/members/hyeok-kwon.html) on generating synthetic sensor data for human activity recognition using text-based generative models. I’m broadly interested in how AI and sensing technologies can model and understand human behavior in realistic, privacy-preserving ways.
 
 [My CV can be found here](../files/Resume.pdf)
 
 ## Research
 
-My research lies at the intersection of computer vision and ubiquitous computing. A significant portion of my research focuses on generating synthetic/virtual sensor data from videos and texts to augment existing datasets for human activity recognition. This approach facilitates more robust and generalizable model training. Additionally, I've delved into sign language recognition, collaborating with [Prof. Thad Starner](https://www.cc.gatech.edu/people/thad-starner) and technologies for diabetes management in collaboration with [Prof. Rosa Arriaga](https://sites.google.com/view/riarriaga/home?authuser=0).
+My research lies at the intersection of ubiquitous computing, synthetic data generation, and large language models (LLMs). I build intelligent simulation systems where LLM-guided embodied agents generate virtual sensor data—such as motion, ambient, and wearable signals—inside realistic environments. This work aims to scale human activity recognition (HAR) beyond the limits of costly, privacy-sensitive real-world data. I’m also interested in how these generative frameworks can bridge text, video, and sensor modalities, enabling diverse and generalizable models for human-centered AI.
 
 ## Recent News
 

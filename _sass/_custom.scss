@@ -9,50 +9,56 @@
 }
 
 .publication-card {
-  display: flex;
-  gap: 0.75rem;
-  padding: 1rem;
-  background: #fff;
-  border: 1px solid #e8e8e8;
-  border-radius: 8px;
+  position: relative;
+  min-height: 200px;
+  padding: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: flex-end;
 }
 
 .publication-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-  border-color: #52adc8;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
 }
 
-.publication-image {
-  flex-shrink: 0;
-  width: 100px;
-  height: 70px;
-  overflow: hidden;
-  border-radius: 4px;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.publication-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  z-index: 1;
 }
 
-.publication-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.publication-card:hover .publication-image img {
-  transform: scale(1.05);
+.publication-card:hover .publication-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 .publication-content {
-  flex: 1;
+  position: relative;
+  z-index: 2;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .publication-header {
@@ -72,24 +78,30 @@
 }
 
 .publication-title a {
-  color: #2c3e50;
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
 }
 
 .publication-title a:hover {
   color: #52adc8;
+  text-shadow: 0 2px 8px rgba(82, 173, 200, 0.5);
 }
 
 .publication-badge {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 3;
 }
 
 .badge-nomination {
@@ -105,20 +117,23 @@
 .publication-authors {
   margin: 0;
   font-size: 0.95rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .publication-authors strong {
-  color: #2c3e50;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .publication-venue {
   margin: 0;
   font-size: 0.9rem;
-  color: #777;
+  color: rgba(255, 255, 255, 0.85);
   font-style: italic;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* About Page Improvements */
@@ -182,23 +197,23 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .publication-card {
-    flex-direction: column;
-    padding: 1rem;
+    min-height: 180px;
+    padding: 1.5rem;
   }
   
-  .publication-image {
-    width: 100%;
-    max-width: 200px;
-    height: 120px;
-    margin: 0 auto;
+  .publication-title {
+    font-size: 1rem;
   }
   
   .publication-header {
     flex-direction: column;
+    gap: 0.75rem;
   }
   
   .publication-badge {
     align-self: flex-start;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.75rem;
   }
 }
 
@@ -436,16 +451,38 @@ blockquote {
   background-color: #2d2d2d;
 }
 
-/* Dark Mode Styles */
+/* Dark Mode Styles - Apply to html element with highest specificity */
+html.dark-mode {
+  background-color: #1a1a1a !important;
+}
+
 html.dark-mode,
 html.dark-mode body {
+  background-color: #1a1a1a !important;
+}
+
+html.dark-mode body,
+.dark-mode body,
+body.dark-mode {
   background-color: #1a1a1a !important;
   color: #e0e0e0 !important;
 }
 
-.dark-mode body {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+/* Override reset styles */
+html.dark-mode {
+  background-color: #1a1a1a !important;
+}
+
+/* Override default white backgrounds */
+.dark-mode .wrapper,
+.dark-mode #main,
+.dark-mode .main {
+  background-color: #1a1a1a !important;
+}
+
+/* Ensure all page containers are dark */
+.dark-mode #main .page {
+  background-color: transparent !important;
 }
 
 .dark-mode .masthead {
@@ -462,25 +499,77 @@ html.dark-mode body {
 }
 
 .dark-mode .page,
-.dark-mode #main {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+.dark-mode #main,
+.dark-mode #main .page {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
 }
 
 .dark-mode .page__inner-wrap {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .page__content {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .page {
+  background-color: #1a1a1a !important;
+}
+
+.dark-mode .wrapper {
+  background-color: #1a1a1a !important;
+}
+
+.dark-mode article {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+/* Force dark backgrounds on all containers */
+.dark-mode #main {
+  background-color: #1a1a1a !important;
+}
+
+.dark-mode .page__inner-wrap {
+  background-color: transparent !important;
+}
+
+/* Override any white backgrounds */
+.dark-mode div:not(.publication-card):not(.publication-gradient) {
+  background-color: transparent !important;
+}
+
+.dark-mode .publications-container {
+  background-color: transparent !important;
 }
 
 .dark-mode .publication-card {
-  background: #2d2d2d;
-  border-color: #404040;
-  color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode .publication-card:hover {
-  border-color: #52adc8;
-  box-shadow: 0 4px 12px rgba(82, 173, 200, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .publication-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
+.dark-mode .publication-card:hover .publication-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
 }
 
 .dark-mode .publication-title a {
