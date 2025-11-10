@@ -4,3 +4,35 @@
 {% include /comments-providers/scripts.html %}
 
 <script src="{{ base_path }}/assets/js/dark-mode.js"></script>
+
+<script>
+// Back to Top Button
+(function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  if (!backToTopButton) return;
+  
+  // Show/hide button based on scroll position
+  function toggleBackToTop() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  }
+  
+  // Scroll to top when clicked
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Listen for scroll events
+  window.addEventListener('scroll', toggleBackToTop);
+  
+  // Check initial state
+  toggleBackToTop();
+})();
+</script>
