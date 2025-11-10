@@ -1,32 +1,41 @@
-<button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-  <svg class="icon-sun" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-    <circle cx="10" cy="10" r="4"></circle>
-    <path d="M10 2v2M10 16v2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M2 10h2M16 10h2M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41"></path>
-  </svg>
-  <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-  </svg>
-</button>
+<label class="dark-mode-toggle" for="dark-mode-switch" aria-label="Toggle dark mode">
+  <input type="checkbox" id="dark-mode-switch" class="dark-mode-switch">
+  <span class="toggle-slider">
+    <span class="toggle-icon toggle-icon-sun">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="10" cy="10" r="4"></circle>
+        <path d="M10 2v2M10 16v2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M2 10h2M16 10h2M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41"></path>
+      </svg>
+    </span>
+    <span class="toggle-icon toggle-icon-moon">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+      </svg>
+    </span>
+  </span>
+</label>
 
 <script>
 (function() {
-  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const darkModeSwitch = document.getElementById('dark-mode-switch');
   const html = document.documentElement;
   
   // Check for saved theme preference or default to light mode
   const currentTheme = localStorage.getItem('theme') || 'light';
   
-  // Apply theme on page load
+  // Set initial state
   if (currentTheme === 'dark') {
     html.classList.add('dark-mode');
+    darkModeSwitch.checked = true;
+  } else {
+    darkModeSwitch.checked = false;
   }
   
   // Toggle theme
-  darkModeToggle.addEventListener('click', function() {
+  darkModeSwitch.addEventListener('change', function() {
     html.classList.toggle('dark-mode');
     const isDark = html.classList.contains('dark-mode');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 })();
 </script>
-

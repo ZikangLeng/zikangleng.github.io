@@ -2,12 +2,29 @@
 # Run this after installing Ruby and Bundler
 
 Write-Host "Testing Jekyll build..." -ForegroundColor Cyan
+Write-Host ""
+
+# Check if Ruby is available
+if (-not (Get-Command ruby -ErrorAction SilentlyContinue)) {
+    Write-Host "ERROR: Ruby not found in PATH." -ForegroundColor Red
+    Write-Host ""
+    Write-Host "Solutions:" -ForegroundColor Yellow
+    Write-Host "1. Restart your PowerShell/terminal" -ForegroundColor White
+    Write-Host "2. Use 'Start Command Prompt with Ruby' from Start Menu" -ForegroundColor White
+    Write-Host "3. Run: .\check-ruby.ps1 to diagnose the issue" -ForegroundColor White
+    Write-Host ""
+    Write-Host "Download Ruby from: https://rubyinstaller.org/" -ForegroundColor Yellow
+    exit 1
+}
 
 # Check if bundle is available
 if (-not (Get-Command bundle -ErrorAction SilentlyContinue)) {
-    Write-Host "ERROR: Bundler not found. Please install Ruby first." -ForegroundColor Red
-    Write-Host "Download Ruby from: https://rubyinstaller.org/" -ForegroundColor Yellow
-    exit 1
+    Write-Host "WARNING: Bundler not found. Installing..." -ForegroundColor Yellow
+    gem install bundler
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "ERROR: Failed to install Bundler" -ForegroundColor Red
+        exit 1
+    }
 }
 
 # Check if Gemfile exists
