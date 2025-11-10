@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: "Zikang Leng"
-excerpt: "About me"
+excerpt: "Home"
 author_profile: true
 redirect_from:
   - /about/

@@ -359,7 +359,11 @@ blockquote {
   background-color: white;
   transition: 0.3s;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode-switch:checked + .toggle-slider {
@@ -371,39 +375,56 @@ blockquote {
 }
 
 .toggle-icon {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
 }
 
 .toggle-icon-sun {
+  left: 8px;
+  color: #f39c12;
   opacity: 1;
-  margin-left: 6px;
 }
 
 .toggle-icon-moon {
-  opacity: 0;
-  margin-right: 6px;
-}
-
-.dark-mode-switch:checked + .toggle-slider .toggle-icon-sun {
+  right: 8px;
+  color: #fff;
   opacity: 0;
 }
 
-.dark-mode-switch:checked + .toggle-slider .toggle-icon-moon {
-  opacity: 1;
-}
-
+/* Light mode: sun visible on left, moon hidden */
 .dark-mode-switch:not(:checked) + .toggle-slider .toggle-icon-sun {
   opacity: 1;
+  transform: scale(1);
 }
 
 .dark-mode-switch:not(:checked) + .toggle-slider .toggle-icon-moon {
   opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Dark mode: moon visible on right, sun hidden */
+.dark-mode-switch:checked + .toggle-slider .toggle-icon-sun {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.dark-mode-switch:checked + .toggle-slider .toggle-icon-moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Sun icon inside the slider thumb when in light mode */
+.dark-mode-switch:not(:checked) + .toggle-slider:before {
+  content: "☀";
+  font-size: 14px;
+  line-height: 24px;
+  color: #f39c12;
+  text-align: center;
 }
 
 /* Light mode - toggle background is lighter */
@@ -416,9 +437,10 @@ blockquote {
 }
 
 /* Dark Mode Styles */
-.dark-mode {
-  background-color: #1a1a1a;
-  color: #e0e0e0;
+html.dark-mode,
+html.dark-mode body {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
 }
 
 .dark-mode body {
@@ -439,7 +461,13 @@ blockquote {
   color: #52adc8;
 }
 
-.dark-mode .page {
+.dark-mode .page,
+.dark-mode #main {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.dark-mode .page__inner-wrap {
   background-color: #1a1a1a;
   color: #e0e0e0;
 }
@@ -525,5 +553,40 @@ blockquote {
 .dark-mode blockquote {
   border-left-color: #52adc8;
   color: #b0b0b0;
+}
+
+.dark-mode .page__footer,
+.dark-mode footer {
+  background-color: #2d2d2d;
+  color: #b0b0b0;
+  border-top: 1px solid #404040;
+}
+
+.dark-mode .page__footer a {
+  color: #52adc8;
+}
+
+.dark-mode .page__footer a:hover {
+  color: #6bb8d4;
+}
+
+.dark-mode .sidebar__right {
+  background-color: #2d2d2d;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  color: #e0e0e0;
+}
+
+.dark-mode .page__title {
+  color: #e0e0e0;
+}
+
+.dark-mode .archive__item-title a {
+  color: #e0e0e0;
+}
+
+.dark-mode .archive__item-title a:hover {
+  color: #52adc8;
 }
 
