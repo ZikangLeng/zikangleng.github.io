@@ -44,7 +44,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
-              <a href="https://dl.acm.org/doi/10.1145/3678545">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
+              <a href="https://dl.acm.org/doi/abs/10.1145/3726302.3730174">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
             </h3>
           </div>
           <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Johanne R Trippas, Damiano Spina</p>
@@ -63,6 +63,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           <div class="publication-header">
             <h3 class="publication-title">
               <a href="https://dl.acm.org/doi/10.1145/3678545">IMUGPT 2.0: Language-Based Cross Modality Transfer for Sensor-Based Human Activity Recognition</a>
+              <!-- TODO: Verify correct DOI - currently same as SIGIR 2025 paper -->
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz</p>
@@ -153,9 +154,8 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
 
 </div>
 
-<!-- Back to Top Button -->
-<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+<div id="back-to-top" class="back-to-top" role="button" tabindex="0" aria-label="Back to top">
   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
     <path d="M10 15V5M5 10l5-5 5 5"/>
   </svg>
-</button>
+</div>

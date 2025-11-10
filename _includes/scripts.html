@@ -8,31 +8,55 @@
 <script>
 // Back to Top Button
 (function() {
-  const backToTopButton = document.getElementById('back-to-top');
-  
-  if (!backToTopButton) return;
-  
-  // Show/hide button based on scroll position
-  function toggleBackToTop() {
-    if (window.pageYOffset > 300) {
-      backToTopButton.classList.add('visible');
-    } else {
-      backToTopButton.classList.remove('visible');
+  function initBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (!backToTopButton) {
+      // Retry if element not found yet
+      setTimeout(initBackToTop, 100);
+      return;
     }
+    
+    // Show/hide button based on scroll position
+    function toggleBackToTop() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    }
+    
+    // Scroll to top when clicked
+    function scrollToTop(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+    
+    backToTopButton.addEventListener('click', scrollToTop);
+    backToTopButton.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        scrollToTop(e);
+      }
+    });
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', toggleBackToTop, { passive: true });
+    
+    // Check initial state
+    toggleBackToTop();
   }
   
-  // Scroll to top when clicked
-  backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-  
-  // Listen for scroll events
-  window.addEventListener('scroll', toggleBackToTop);
-  
-  // Check initial state
-  toggleBackToTop();
+  // Run when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+  } else {
+    initBackToTop();
+  }
 })();
 </script>
