@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Zikang Leng"
 title_separator          : "-"
 name                     : &name "Zikang Leng"
-description              : &description "personal description"
+description              : &description "CS PhD Student at Georgia Tech | Research in Computer Vision & Ubiquitous Computing | Human Activity Recognition"
 url                      : "https://zikangleng.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "zikangleng/zikangleng.github.io"
@@ -82,7 +82,7 @@ analytics:
 author:
   name             : "Zikang Leng"
   avatar           : "Zikang Leng_86A5691.jpg"
-  bio              : "CS student at Georgia Tech"
+  bio              : "CS PhD Student at Georgia Tech | Research in Computer Vision & Ubiquitous Computing"
   location         : "Atlanta, Georgia"
   employer         :
   googlescholar    : "https://scholar.google.com/citations?user=P6qXmC8AAAAJ&hl=en"

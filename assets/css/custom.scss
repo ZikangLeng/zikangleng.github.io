@@ -1,0 +1,268 @@
+---
+---
+
+/* Custom Styles for Enhanced Visual Appeal */
+
+/* Publications Page Styling */
+.publications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.publication-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.publication-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #52adc8;
+}
+
+.publication-image {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publication-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.publication-card:hover .publication-image img {
+  transform: scale(1.05);
+}
+
+.publication-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.publication-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.publication-title {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 200px;
+}
+
+.publication-title a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.publication-title a:hover {
+  color: #52adc8;
+}
+
+.publication-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.badge-nomination {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.badge-honorable {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.publication-authors {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.publication-authors strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.publication-venue {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* About Page Improvements */
+.page__content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8e8e8;
+  color: #2c3e50;
+}
+
+.page__content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page__content ul li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.page__content ul li:hover {
+  border-left-color: #52adc8;
+  padding-left: 2rem;
+  background: rgba(82, 173, 200, 0.05);
+  margin-left: -1.5rem;
+  padding-left: 1.5rem;
+}
+
+.page__content ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #52adc8;
+  font-weight: bold;
+}
+
+/* Enhanced Typography */
+.page__title {
+  color: #2c3e50;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Link Styling */
+.page__content a {
+  color: #52adc8;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.page__content a:hover {
+  color: #3a8ba3;
+  border-bottom-color: #3a8ba3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publication-card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .publication-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .publication-header {
+    flex-direction: column;
+  }
+  
+  .publication-badge {
+    align-self: flex-start;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced Author Profile */
+.author__avatar img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.author__avatar:hover img {
+  transform: scale(1.05);
+}
+
+/* Section Dividers */
+.page__content > * + * {
+  margin-top: 1.5rem;
+}
+
+/* News Section Styling */
+.page__content ul li {
+  line-height: 1.8;
+}
+
+/* CV Page Improvements */
+.page__content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.page__content ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Code blocks and inline code */
+code {
+  background: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #52adc8;
+  padding-left: 1.5rem;
+  margin-left: 0;
+  color: #555;
+  font-style: italic;
+}
+
