@@ -34,7 +34,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           <a href="https://arxiv.org/pdf/2510.06658">Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks</a>
         </h3>
       </div>
-      <p class="publication-authors">Jiaman He, <strong>Zikang Leng*</strong>, Dana McKay, Damiano Spina, Johanne R Trippas</p>
+      <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Damiano Spina, Johanne R Trippas</p>
       <p class="publication-venue">SIGIR-AP, 2025</p>
     </div>
   </div>
