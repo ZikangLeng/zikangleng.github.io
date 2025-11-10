@@ -7,7 +7,68 @@ author_profile: true
 You can also find my articles on <u><a href="https://scholar.google.com/citations?user=P6qXmC8AAAAJ&hl=en">my Google Scholar profile</a>.</u>
 
 <div class="publications-container">
-  
+
+
+  <div class="publication-card">
+    <div class="publication-image">
+      <img src="../images/wheelchair.png" alt="AgentSense">
+    </div>
+    <div class="publication-content">
+      <div class="publication-header">
+        <h3 class="publication-title">
+          <a href="https://arxiv.org/pdf/2506.11773?">AgentSense: Virtual Sensor Data Generation Using LLM Agent in Simulated Home Environments</a>
+        </h3>
+      </div>
+      <p class="publication-authors"><strong>Zikang Leng*</strong>, Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz</p>
+      <p class="publication-venue"> AAAI, 2026</p>
+    </div>
+  </div>
+
+  <div class="publication-card">
+    <div class="publication-image">
+      <img src="../images/emotion.png" alt="LLM Evaluation">
+    </div>
+    <div class="publication-content">
+      <div class="publication-header">
+        <h3 class="publication-title">
+          <a href="https://arxiv.org/pdf/2510.06658">Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks</a>
+        </h3>
+      </div>
+      <p class="publication-authors">Jiaman He, <strong>Zikang Leng*</strong>, Dana McKay, Damiano Spina, Johanne R Trippas</p>
+      <p class="publication-venue">SIGIR-AP, 2025</p>
+    </div>
+  </div>
+
+  <div class="publication-card">
+    <div class="publication-image">
+      <img src="../images/imugpt2.png" alt="Famiarlity Detection">
+    </div>
+    <div class="publication-content">
+      <div class="publication-header">
+        <h3 class="publication-title">
+          <a href="https://dl.acm.org/doi/10.1145/3678545">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
+        </h3>
+      </div>
+      <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Johanne R Trippas, Damiano Spina<</p>
+      <p class="publication-venue">IMWUT</p>
+    </div>
+  </div>
+
+  <div class="publication-card">
+    <div class="publication-image">
+      <img src="../images/fingerspeller.png" alt="FingerSpeller">
+    </div>
+    <div class="publication-content">
+      <div class="publication-header">
+        <h3 class="publication-title">
+          <a href="https://dl.acm.org/doi/10.1145/3597638.3614491">FingerSpeller: Camera-Free Text Entry Using Smart Rings for American Sign Language Fingerspelling Recognition</a>
+        </h3>
+      </div>
+      <p class="publication-authors">David Martin*, <strong>Zikang Leng*</strong>, Tan Gemicioglu, Jon Womack, Jocelyn Heath, William C Neubauer, Hyeokhyen Kwon, Thomas Plötz, Thad Starner</p>
+      <p class="publication-venue">ASSETS, 2023</p>
+    </div>
+  </div>
+    
   <div class="publication-card">
     <div class="publication-image">
       <img src="../images/wheelchair.png" alt="Wheelchair Transportation Mode Detection">
