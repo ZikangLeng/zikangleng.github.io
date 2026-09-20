@@ -16,7 +16,12 @@ gem "github-pages", group: :jekyll_plugins
 
 # gem "jekyll"
 
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# wdm 0.1.x is a native extension that no longer compiles on Ruby 3.4, which
+# made `bundle exec jekyll serve` fail outright. It only speeds up file
+# watching on Windows; without it `--watch` falls back to polling, which works
+# fine for a site this size. Windows also has no zoneinfo database, so Jekyll
+# needs tzinfo-data to resolve the timezone in _config.yml.
+gem "tzinfo-data", platforms: [:windows, :jruby]
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
