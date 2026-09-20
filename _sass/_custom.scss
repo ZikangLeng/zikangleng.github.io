@@ -350,6 +350,12 @@ a.text-link:focus-visible {
    ========================================================================== */
 
 .home-hero {
+  /* The decorative orbit ring is a rotating square with a 50% radius. Its
+     *transformed* bounding box grows by up to sqrt(2) as it spins, which
+     pushed the page ~80px wider than the viewport and produced a horizontal
+     scrollbar. Clip on the x axis only: unlike `hidden`, `clip` does not
+     create a scroll container, so vertical hover lifts still overflow fine. */
+  overflow-x: clip;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
   gap: 3.5rem;
