@@ -1,92 +1,54 @@
-// Dark Mode Toggle Script
-(function() {
+// Dark mode toggle.
+//
+// This script only flips a class and remembers the choice. Every colour lives
+// in the CSS custom properties defined in _sass/_custom.scss, which redefines
+// them under `html.dark-mode`. Do not set colours here — inline styles would
+// override the stylesheet and silently become a second source of truth.
+//
+// The class is applied before first paint by the inline snippet in
+// _includes/head.html, so this file only handles user-initiated changes.
+(function () {
+  function applyTheme(isDark) {
+    document.documentElement.classList.toggle('dark-mode', isDark);
+    if (document.body) {
+      document.body.classList.toggle('dark-mode', isDark);
+    }
+  }
+
   function initDarkMode() {
-    const darkModeSwitch = document.getElementById('dark-mode-switch');
-    const html = document.documentElement;
-    const body = document.body;
-    
+    var darkModeSwitch = document.getElementById('dark-mode-switch');
+
     if (!darkModeSwitch) {
-      // Retry if element not found yet
       setTimeout(initDarkMode, 100);
       return;
     }
-    
-    // Check for saved theme preference or default to dark mode
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    // Set initial state
-    function applyDarkMode(isDark) {
-      if (isDark) {
-        html.classList.add('dark-mode');
-        if (body) body.classList.add('dark-mode');
-        darkModeSwitch.checked = true;
-        // Force style application
-        html.style.backgroundColor = '#1a1a1a';
-        body.style.backgroundColor = '#1a1a1a';
-        body.style.color = '#e0e0e0';
-        
-        // Force masthead and sidebar to match
-        const masthead = document.querySelector('.masthead');
-        const mastheadInner = document.querySelector('.masthead__inner-wrap');
-        const mastheadMenu = document.querySelector('.masthead__menu');
-        const greedyNav = document.querySelector('.greedy-nav');
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarRight = document.querySelector('.sidebar__right');
-        
-        if (masthead) masthead.style.backgroundColor = '#1a1a1a';
-        if (mastheadInner) mastheadInner.style.backgroundColor = '#1a1a1a';
-        if (mastheadMenu) mastheadMenu.style.backgroundColor = '#1a1a1a';
-        if (greedyNav) greedyNav.style.backgroundColor = '#1a1a1a';
-        if (sidebar) sidebar.style.backgroundColor = '#1a1a1a';
-        if (sidebarRight) sidebarRight.style.backgroundColor = '#1a1a1a';
-      } else {
-        html.classList.remove('dark-mode');
-        if (body) body.classList.remove('dark-mode');
-        darkModeSwitch.checked = false;
-        // Reset to light mode
-        html.style.backgroundColor = '';
-        body.style.backgroundColor = '';
-        body.style.color = '';
-        
-        // Reset masthead and sidebar
-        const masthead = document.querySelector('.masthead');
-        const mastheadInner = document.querySelector('.masthead__inner-wrap');
-        const mastheadMenu = document.querySelector('.masthead__menu');
-        const greedyNav = document.querySelector('.greedy-nav');
-        const sidebar = document.querySelector('.sidebar');
-        const sidebarRight = document.querySelector('.sidebar__right');
-        
-        if (masthead) masthead.style.backgroundColor = '';
-        if (mastheadInner) mastheadInner.style.backgroundColor = '';
-        if (mastheadMenu) mastheadMenu.style.backgroundColor = '';
-        if (greedyNav) greedyNav.style.backgroundColor = '';
-        if (sidebar) sidebar.style.backgroundColor = '';
-        if (sidebarRight) sidebarRight.style.backgroundColor = '';
-      }
+
+    var storedTheme;
+    try {
+      storedTheme = localStorage.getItem('theme');
+    } catch (e) {
+      storedTheme = null;
     }
-    
-    applyDarkMode(currentTheme === 'dark');
-    
-    // Re-apply styles after a short delay to ensure DOM is ready
-    setTimeout(function() {
-      if (currentTheme === 'dark') {
-        applyDarkMode(true);
+
+    var isDark = (storedTheme || 'dark') === 'dark';
+
+    applyTheme(isDark);
+    darkModeSwitch.checked = isDark;
+
+    darkModeSwitch.addEventListener('change', function (e) {
+      var nowDark = e.target.checked;
+      applyTheme(nowDark);
+      try {
+        localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+      } catch (err) {
+        /* storage unavailable (private mode) — the class still applies */
       }
-    }, 100);
-    
-    // Toggle theme
-    darkModeSwitch.addEventListener('change', function(e) {
-      const isChecked = e.target.checked;
-      applyDarkMode(isChecked);
-      localStorage.setItem('theme', isChecked ? 'dark' : 'light');
     });
   }
-  
-  // Run when DOM is ready
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initDarkMode);
   } else {
     initDarkMode();
   }
 })();
-

@@ -1,25 +1,43 @@
 ---
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
+classes: wide
+hide_title: true
 ---
 
-You can also find my articles on <u><a href="https://scholar.google.com/citations?user=P6qXmC8AAAAJ&hl=en">my Google Scholar profile</a>.</u>
+<header class="page-intro page-intro--compact">
+  <span class="eyebrow">Research outputs</span>
+  <h1>Publications</h1>
+  <p>Work across human-centered AI, ubiquitous computing, sensing, and human activity recognition. For citation counts and the latest indexing, visit <a href="https://scholar.google.com/citations?user=P6qXmC8AAAAJ&hl=en">Google Scholar <span aria-hidden="true">↗</span></a>.</p>
+</header>
 
 <div class="publications-container">
 
   <div class="publication-year-group">
     <h2 class="publication-year-header">2026</h2>
     <div class="publication-year-content">
+      <div class="publication-card publication-card--highlight">
+        <div class="publication-content">
+          <div class="publication-header">
+            <h3 class="publication-title"><a href="https://arxiv.org/abs/2605.01238">EduGage: Methods and Dataset for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a></h3>
+            <span class="publication-badge badge-accepted">Accepted</span>
+          </div>
+          <p class="publication-authors"><strong>Zikang Leng</strong>, Edan Eyal, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz</p>
+          <p class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2026</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2605.01238">Paper ↗</a></div>
+        </div>
+      </div>
       <div class="publication-card">
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
-              <a href="https://arxiv.org/pdf/2506.11773?">AgentSense: Virtual Sensor Data Generation Using LLM Agent in Simulated Home Environments</a>
+              <a href="https://arxiv.org/abs/2506.11773">AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments</a>
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz</p>
-          <p class="publication-venue">AAAI, 2026</p>
+          <p class="publication-venue">Proceedings of the AAAI Conference on Artificial Intelligence, 40(3), 1891–1899, 2026</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2506.11773">Paper ↗</a><a href="https://github.com/ZikangLeng/AgentSense">Code ↗</a></div>
         </div>
       </div>
     </div>
@@ -28,6 +46,14 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
   <div class="publication-year-group">
     <h2 class="publication-year-header">2025</h2>
     <div class="publication-year-content">
+      <div class="publication-card">
+        <div class="publication-content">
+          <div class="publication-header"><h3 class="publication-title"><a href="https://arxiv.org/abs/2506.07612">Scaling Human Activity Recognition: A Comparative Evaluation of Synthetic Data Generation and Augmentation Techniques</a></h3></div>
+          <p class="publication-authors"><strong>Zikang Leng</strong>, Archith Iyer, Thomas Plötz</p>
+          <p class="publication-venue">arXiv preprint, 2025</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2506.07612">Paper ↗</a></div>
+        </div>
+      </div>
       <div class="publication-card">
         <div class="publication-content">
           <div class="publication-header">
@@ -54,6 +80,14 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
 
       <div class="publication-card">
         <div class="publication-content">
+          <div class="publication-header"><h3 class="publication-title"><a href="https://doi.org/10.2337/db25-259-OR">259-OR: Evaluating Diabetic Foot Ulcer Recognition Algorithms for Patients of Color</a></h3></div>
+          <p class="publication-authors">Cynthia Baseman, <strong>Zikang Leng</strong>, Thomas Plötz, Gabriel Santamarina, Marcos C. Schechter, Maya Fayfman, Rosa I. Arriaga</p>
+          <p class="publication-venue">Diabetes, 74 (Supplement 1), 2025</p>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
               <a href="https://dl.acm.org/doi/abs/10.1145/3726302.3730174">Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data</a>
@@ -75,11 +109,11 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           <div class="publication-header">
             <h3 class="publication-title">
               <a href="https://dl.acm.org/doi/10.1145/3678545">IMUGPT 2.0: Language-Based Cross Modality Transfer for Sensor-Based Human Activity Recognition</a>
-              <!-- TODO: Verify correct DOI - currently same as SIGIR 2025 paper -->
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">IMWUT, 2024</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3678545">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
       
@@ -122,6 +156,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           </div>
           <p class="publication-authors">David Martin*, <strong>Zikang Leng*</strong>, Tan Gemicioglu, Jon Womack, Jocelyn Heath, William C Neubauer, Hyeokhyen Kwon, Thomas Plötz, Thad Starner</p>
           <p class="publication-venue">ASSETS, 2023</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3597638.3614491">Paper ↗</a><a href="https://github.com/ZikangLeng/FingerSpeller">Data ↗</a></div>
         </div>
       </div>
 
@@ -147,6 +182,7 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2023</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
 
@@ -159,6 +195,24 @@ You can also find my articles on <u><a href="https://scholar.google.com/citation
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Yash Jain, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2023</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="publication-year-group">
+    <h2 class="publication-year-header">2022</h2>
+    <div class="publication-year-content">
+      <div class="publication-card">
+        <div class="publication-content">
+          <div class="publication-header">
+            <h3 class="publication-title">
+              <a href="https://arxiv.org/abs/2211.01342">Fine-grained Human Activity Recognition Using Virtual On-body Acceleration Data</a>
+            </h3>
+          </div>
+          <p class="publication-authors"><strong>Zikang Leng</strong>, Yash Jain, Hyeokhyen Kwon, Thomas Plötz</p>
+          <p class="publication-venue">arXiv preprint, 2022</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2211.01342">Paper ↗</a></div>
         </div>
       </div>
     </div>

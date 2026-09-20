@@ -1,14 +1,25 @@
 ---
 title: "News"
 permalink: /news/
-author_profile: true
+author_profile: false
+classes: wide
 ---
+
+- **📖 Sep, 2026**: Our paper - [EduGage: Methods and Dataset for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning](https://arxiv.org/abs/2605.01238) have been accepted to [IMWUT](https://dl.acm.org/journal/imwut). The paper contributes a synchronized multimodal dataset covering PPG, ECG, EDA, EEG, IMU, eye tracking, and interaction signals.
+
+- **🎉 Aug, 2026**: Started my internship as a Machine Learning Engineer Intern at Behavior AI.
 
 - **📖 Dec, 2025**: Our paper - [Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks](https://arxiv.org/pdf/2510.06658) have been accepted and presented at [SIGIR-AP 2025](https://www.sigir-ap.org/sigir-ap-2025/). 
 
 - **📖 Nov, 2025**: Our paper - [AgentSense: Virtual Sensor Data Generation Using LLM Agent in Simulated Home Environments](https://arxiv.org/pdf/2506.11773?) have been accepted at [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/) 
 
+- **📖 2025**: Our paper - [Towards More Equitable Ulcer Recognition Models: A Dataset of Naturalistic Foot Images from People of Color Living with Diabetes](https://openreview.net/pdf?id=v0ZDvVLro6) have been accepted at the [IEEE EMBS International Conference on Biomedical and Health Informatics (BHI)](https://bhi.embs.org/2025/).
+
 - **📖 Jul, 2025**: Our paper - [Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data](https://dl.acm.org/doi/pdf/10.1145/3726302.3730174) have been accepted and presented at [SIGIR 2025](https://sigir2025.dei.unipd.it/).
+
+- **📖 Jun, 2025**: Released a preprint - [Scaling Human Activity Recognition: A Comparative Evaluation of Synthetic Data Generation and Augmentation Techniques](https://arxiv.org/abs/2506.07612), benchmarking synthetic data generation against classical augmentation for HAR.
+
+- **📖 Jun, 2025**: Our abstract - [259-OR: Evaluating Diabetic Foot Ulcer Recognition Algorithms for Patients of Color](https://doi.org/10.2337/db25-259-OR) have been published in *Diabetes* as part of the American Diabetes Association Scientific Sessions.
 
 - **📖 Oct, 2024**: Our paper - [Emotion Recognition on the Go: Utilizing Wearable IMUs for Personalized Emotion Recognition](https://dl.acm.org/doi/abs/10.1145/3675094.3678452) have been accepted and presented at [HASCA](http://hasca2024.hasc.jp/) within [UbiComp/ISWC 2024](https://www.ubicomp.org/ubicomp-iswc-2024/).
 

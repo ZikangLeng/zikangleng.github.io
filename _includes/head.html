@@ -13,6 +13,17 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  // Apply the saved theme before first paint so the page never flashes light
+  // before switching to dark. Colours themselves live in _custom.scss tokens.
+  (function () {
+    try {
+      if ((localStorage.getItem('theme') || 'dark') === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    } catch (e) {
+      document.documentElement.classList.add('dark-mode');
+    }
+  })();
 </script>
 
 <!-- For all browsers -->
