@@ -423,12 +423,13 @@ ul.social-row li:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  min-height: 40px;
+  padding: 0.55rem 0.85rem;
   border: 1px solid var(--border-strong);
-  border-radius: 50%;
+  border-radius: var(--radius-pill);
   color: var(--text-muted);
-  font-size: 1.05rem;
+  font-size: 0.76rem;
+  font-weight: 650;
   text-decoration: none;
   transition: color var(--speed) var(--ease),
               border-color var(--speed) var(--ease),
@@ -443,8 +444,6 @@ ul.social-row li:hover {
   background: var(--accent-wash);
   transform: translateY(-2px);
 }
-
-.social-row i { line-height: 1; }
 
 /* Portrait with orbit rings */
 .home-hero__portrait-wrap {
@@ -727,56 +726,117 @@ html.dark-mode .project-card__media--square {
 
 .featured-card__body a:hover { color: var(--accent-hover); }
 
-/* News panel */
-.news-list {
-  display: flex;
-  flex-direction: column;
+/* Latest-news timeline. The narrow marker column owns the continuous rule,
+   keeping dates and copy aligned while matching the editorial reference. */
+.latest-news {
+  padding: 3.5rem 0 3.75rem;
   border-top: 1px solid var(--border);
-}
-
-.news-list a {
-  display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr) 1.5rem;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.05rem 0.5rem;
   border-bottom: 1px solid var(--border);
-  text-decoration: none;
+}
+
+.latest-news__heading {
+  margin-bottom: 2.15rem;
+}
+
+.latest-news__heading h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.35rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.news-timeline {
+  position: relative;
+}
+
+.news-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  bottom: 0.7rem;
+  left: 8.4rem;
+  width: 1px;
+  background: var(--border-strong);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 7rem 1.8rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+  padding: 0.65rem 0 1.55rem;
   color: var(--text-muted);
-  transition: background-color var(--speed) var(--ease),
-              padding-left var(--speed) var(--ease);
+  text-decoration: none;
+  border-bottom: 0;
 }
 
-.news-list a:hover {
-  background: var(--accent-wash);
-  padding-left: 1rem;
-  border-bottom-color: var(--accent);
+.news-item:last-child {
+  padding-bottom: 0.65rem;
 }
 
-.news-list time {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--accent-strong);
-}
-
-.news-list span {
-  font-size: 0.94rem;
-  line-height: 1.55;
-}
-
-.news-list strong { color: var(--text); font-weight: 650; }
-
-.news-list i {
-  font-style: normal;
+.news-item time {
+  display: flex;
+  gap: 0.35rem;
+  padding-top: 0.18rem;
   color: var(--text-subtle);
-  text-align: right;
-  transition: transform var(--speed) var(--ease);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.news-list a:hover i {
-  transform: translateX(3px);
-  color: var(--accent-strong);
+.news-item__marker {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-top: 0.25rem;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--accent-strong);
+  box-shadow: 0 0 0 1px var(--border-strong);
+  transition: transform var(--speed) var(--ease),
+              background-color var(--speed) var(--ease);
+}
+
+.news-item p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  transition: color var(--speed) var(--ease),
+              transform var(--speed) var(--ease);
+}
+
+.news-item__emoji {
+  display: inline-block;
+  margin-right: 0.18rem;
+  font-size: 1.05em;
+  line-height: 1;
+  text-decoration: none;
+  transform: translateY(0.05em);
+}
+
+.news-item strong {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 0.2em;
+}
+
+.news-item:hover p,
+.news-item:focus-visible p {
+  color: var(--text);
+  transform: translateX(0.25rem);
+}
+
+.news-item:hover .news-item__marker,
+.news-item:focus-visible .news-item__marker {
+  transform: scale(1.25);
+  background: var(--accent);
 }
 
 /* Contact strip */
@@ -1547,12 +1607,38 @@ html.dark-mode .toggle-icon-moon { color: #fff !important; }
     padding: 1.75rem 1.5rem;
   }
 
-  .news-list a {
-    grid-template-columns: 4rem minmax(0, 1fr);
-    gap: 0.75rem;
+  .latest-news { padding: 2.75rem 0 3rem; }
+
+  .latest-news__heading {
+    align-items: baseline;
+    margin-bottom: 1.5rem;
   }
 
-  .news-list i { display: none; }
+  .news-timeline::before { left: 0.38rem; }
+
+  .news-item {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.4rem 0 1.5rem;
+  }
+
+  .news-item time {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0;
+  }
+
+  .news-item__marker {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-top: 0.15rem;
+  }
+
+  .news-item p {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 0.94rem;
+  }
 
   /* Publications */
   .publications-container { gap: 2.5rem; }

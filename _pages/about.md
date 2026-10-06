@@ -20,11 +20,11 @@ redirect_from:
       <a class="button button--secondary" href="/files/Resume.pdf">View CV</a>
     </div>
     <ul class="social-row" aria-label="Profiles and contact">
-      {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a></li>{% endif %}
-      {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>{% endif %}
-      {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>{% endif %}
-      {% if site.author.twitter %}<li><a href="https://twitter.com/{{ site.author.twitter }}" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>{% endif %}
-      {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>{% endif %}
+      {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}">Scholar</a></li>{% endif %}
+      {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}">GitHub</a></li>{% endif %}
+      {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn</a></li>{% endif %}
+      {% if site.author.twitter %}<li><a href="https://twitter.com/{{ site.author.twitter }}">X / Twitter</a></li>{% endif %}
+      {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}">Email</a></li>{% endif %}
     </ul>
   </div>
   <div class="home-hero__portrait-wrap">
@@ -32,6 +32,30 @@ redirect_from:
     <div class="home-hero__orbit home-hero__orbit--two"></div>
     <img class="home-hero__portrait" src="/images/Zikang%20Leng_square.jpg" alt="Zikang Leng">
     <div class="home-hero__note"><span class="status-dot"></span><span>NSF Graduate Research Fellow<br><strong>Georgia Tech</strong></span></div>
+  </div>
+</section>
+
+<section class="latest-news section-block" aria-labelledby="latest-news-title">
+  <div class="section-heading latest-news__heading">
+    <h2 id="latest-news-title">Latest News</h2>
+    <a class="text-link" href="/news/">View all news <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="news-timeline">
+    <a class="news-item" href="https://arxiv.org/abs/2605.01238">
+      <time datetime="2026-09"><span>Sep</span> 2026</time>
+      <span class="news-item__marker" aria-hidden="true"></span>
+      <p><span class="news-item__emoji" aria-hidden="true">🎉</span> Our paper <strong>EduGage</strong>, on multimodal sensing for momentary engagement assessment in self-guided learning, has been accepted to <strong>ACM IMWUT</strong>!</p>
+    </a>
+    <a class="news-item" href="https://behaviorai.ai">
+      <time datetime="2026"><span></span>2026</time>
+      <span class="news-item__marker" aria-hidden="true"></span>
+      <p><span class="news-item__emoji" aria-hidden="true">💼</span> I joined <strong>Behavior AI</strong> as a Machine Learning Engineer Intern!</p>
+    </a>
+    <a class="news-item" href="https://arxiv.org/abs/2506.11773">
+      <time datetime="2026"><span></span>2026</time>
+      <span class="news-item__marker" aria-hidden="true"></span>
+      <p><span class="news-item__emoji" aria-hidden="true">📖</span> Our paper <strong>AgentSense</strong>, on virtual sensor data generation using LLM-guided agents, was published at <strong>AAAI 2026</strong>!</p>
+    </a>
   </div>
 </section>
 
@@ -61,15 +85,6 @@ redirect_from:
       <div class="featured-card__image featured-card__image--contain"><img src="/images/imugpt2.png" alt="IMUGPT 2.0 pipeline from language prompts to virtual inertial sensor data"></div>
       <div class="featured-card__body"><div class="project-meta"><span>Virtual sensor data</span><strong>IMWUT 2024</strong></div><h3>IMUGPT 2.0</h3><p>Turning natural-language activity descriptions into diverse virtual IMU signals through motion synthesis and cross-modality transfer.</p><a href="https://dl.acm.org/doi/10.1145/3678545">Read the paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/IMUGPT">Code <span aria-hidden="true">↗</span></a></div>
     </article>
-  </div>
-</section>
-
-<section class="news-panel section-block">
-  <div class="section-heading"><div><span class="section-kicker">Latest</span><h2>News</h2></div><a class="text-link" href="/news/">All news <span aria-hidden="true">→</span></a></div>
-  <div class="news-list">
-    <a href="https://arxiv.org/abs/2605.01238"><time>2026</time><span><strong>EduGage accepted to IMWUT</strong> — multimodal sensing for momentary engagement in self-guided learning.</span><i aria-hidden="true">↗</i></a>
-    <a href="https://behaviorai.ai"><time>2026</time><span><strong>Started as a Machine Learning Engineer Intern at Behavior AI</strong>.</span><i aria-hidden="true">↗</i></a>
-    <a href="https://arxiv.org/abs/2506.11773"><time>2026</time><span><strong>AgentSense published at AAAI</strong> — virtual sensor data generation with LLM-guided agents.</span><i aria-hidden="true">↗</i></a>
   </div>
 </section>
 
