@@ -43,12 +43,12 @@ hide_title: true
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
-              <a href="https://arxiv.org/abs/2506.11773">AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments</a>
+              <a href="https://doi.org/10.1609/aaai.v40i3.37169">AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments</a>
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz</p>
           <p class="publication-venue">Proceedings of the AAAI Conference on Artificial Intelligence, 40(3), 1891–1899, 2026</p>
-          <div class="publication-links"><a href="/agentsense/">Project page →</a><a href="https://arxiv.org/abs/2506.11773">Paper ↗</a><a href="https://github.com/ZikangLeng/AgentSense">Code ↗</a></div>
+          <div class="publication-links"><a href="/agentsense/">Project page →</a><a href="https://doi.org/10.1609/aaai.v40i3.37169">Paper ↗</a><a href="https://arxiv.org/abs/2506.11773">arXiv ↗</a><a href="https://github.com/ZikangLeng/AgentSense">Code ↗</a></div>
         </div>
       </div>
     </div>
