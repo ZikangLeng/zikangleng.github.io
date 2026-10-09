@@ -20,8 +20,11 @@ hide_title: true
       <h2>EduGage</h2>
       <p class="project-card__lead">Can sensing help us understand when a learner is truly engaged?</p>
       <p>EduGage combines PPG, ECG, EDA, EEG, IMU, heart rate, temperature, eye tracking, and interaction data with in-situ engagement reports. The project contributes both a multimodal dataset and practical evidence for lightweight sensing combinations.</p>
-      <div class="project-facts"><span><b>16</b> participants</span><span><b>9+</b> signal types</span><span><b>0.81</b> MAE</span><span><b>83.75%</b> within-1 accuracy</span></div>
+      <div class="project-facts"><span><b>16</b> participants</span><span><b>9+</b> signal types</span><span><b>0.80</b> MAE</span><span><b>83.18%</b> within-1 accuracy</span></div>
+      <a class="project-link" href="/edugage/">Project page <span aria-hidden="true">→</span></a>
       <a class="project-link" href="https://arxiv.org/abs/2605.01238">Paper <span aria-hidden="true">↗</span></a>
+      <a class="project-link" href="https://github.com/ZikangLeng/EduGage">Code <span aria-hidden="true">↗</span></a>
+      <a class="project-link" href="https://doi.org/10.6084/m9.figshare.32145994">Dataset <span aria-hidden="true">↗</span></a>
     </div>
   </article>
 

@@ -5,7 +5,7 @@ author_profile: false
 classes: wide
 ---
 
-- **📖 Sep, 2026**: Our paper - [EduGage: Methods and Dataset for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning](https://arxiv.org/abs/2605.01238) have been accepted to [IMWUT](https://dl.acm.org/journal/imwut). The paper contributes a synchronized multimodal dataset covering PPG, ECG, EDA, EEG, IMU, eye tracking, and interaction signals.
+- **📖 Sep, 2026**: Our paper - [EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning](https://arxiv.org/abs/2605.01238) have been accepted to [IMWUT](https://dl.acm.org/journal/imwut). The paper contributes a synchronized multimodal dataset covering PPG, ECG, EDA, EEG, IMU, eye tracking, and interaction signals.
 
 - **🎉 Aug, 2026**: Started my internship as a Machine Learning Engineer Intern at Behavior AI.
 

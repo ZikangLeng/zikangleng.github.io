@@ -20,12 +20,12 @@ hide_title: true
       <div class="publication-card publication-card--highlight">
         <div class="publication-content">
           <div class="publication-header">
-            <h3 class="publication-title"><a href="https://arxiv.org/abs/2605.01238">EduGage: Methods and Dataset for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a></h3>
+            <h3 class="publication-title"><a href="https://arxiv.org/abs/2605.01238">EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a></h3>
             <span class="publication-badge badge-accepted">Accepted</span>
           </div>
-          <p class="publication-authors"><strong>Zikang Leng</strong>, Edan Eyal, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz</p>
+          <p class="publication-authors"><strong>Zikang Leng*</strong>, Edan Eyal*, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz</p>
           <p class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2026</p>
-          <div class="publication-links"><a href="https://arxiv.org/abs/2605.01238">Paper ↗</a></div>
+          <div class="publication-links"><a href="/edugage/">Project page →</a><a href="https://arxiv.org/abs/2605.01238">Paper ↗</a><a href="https://github.com/ZikangLeng/EduGage">Code ↗</a><a href="https://doi.org/10.6084/m9.figshare.32145994">Dataset ↗</a></div>
         </div>
       </div>
       <div class="publication-card">
