@@ -11,11 +11,7 @@
   function initBackToTop() {
     const backToTopButton = document.getElementById('back-to-top');
     
-    if (!backToTopButton) {
-      // Retry if element not found yet
-      setTimeout(initBackToTop, 100);
-      return;
-    }
+    if (!backToTopButton) return; // only some pages have the button
     
     // Show/hide button based on scroll position
     function toggleBackToTop() {

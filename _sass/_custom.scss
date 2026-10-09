@@ -1681,3 +1681,22 @@ html.dark-mode .toggle-icon-moon { color: #fff !important; }
   .project-facts { gap: 0.4rem; }
   .project-facts span { font-size: 0.75rem; padding: 0.35rem 0.6rem; }
 }
+
+/* News page: the homepage timeline, grouped by year
+   ========================================================================== */
+.news-page { display: grid; gap: 1.25rem; }
+.news-page .publication-year-header { margin-top: 1.5rem; }
+.news-page .publication-year-header:first-child { margin-top: 0; }
+.news-timeline--page { margin-bottom: 0.5rem; }
+.news-item p a {
+  color: var(--accent-strong);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.news-item p a:hover { border-bottom-color: currentColor; }
+@media (min-width: 769px) {
+  .news-timeline--page::before { left: 5.3rem; }
+  .news-timeline--page .news-item { grid-template-columns: 3.9rem 1.8rem minmax(0, 1fr); }
+}
+.news-timeline--page .news-item:hover p { transform: none; }

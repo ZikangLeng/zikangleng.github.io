@@ -29,7 +29,7 @@ hide_title: true
   </article>
 
   <article class="project-card">
-    <div class="project-card__media project-card__media--contain"><img src="/images/agentsense.png" alt="AgentSense pipeline: an LLM generates personalities, schedules, and routines that embodied agents execute in simulated homes instrumented with motion, door, and object sensors"></div>
+    <div class="project-card__media project-card__media--photo"><img src="/images/agentsense-card.jpg" alt="AgentSense: an LLM-driven agent watching TV on the sofa in a simulated VirtualHome living room"></div>
     <div class="project-card__content">
       <div class="project-meta"><span>Embodied AI</span><strong>AAAI 2026</strong></div>
       <h2>AgentSense</h2>
@@ -43,14 +43,16 @@ hide_title: true
   </article>
 
   <article class="project-card">
-    <div class="project-card__media project-card__media--contain"><img src="/images/imugpt2.png" alt="IMUGPT 2.0 language-to-sensor pipeline"></div>
+    <div class="project-card__media project-card__media--contain"><img src="/images/imugpt-card.png" alt="IMUGPT: LLM-written activity descriptions become generated 3D motion and virtual forearm accelerometer signals"></div>
     <div class="project-card__content">
-      <div class="project-meta"><span>Cross-modality generation</span><strong>IMWUT 2024</strong></div>
-      <h2>IMUGPT 2.0</h2>
+      <div class="project-meta"><span>Cross-modality generation</span><strong>ISWC 2023 · IMWUT 2024</strong></div>
+      <h2>IMUGPT</h2>
       <p class="project-card__lead">Describe an activity; generate wearable motion data.</p>
-      <p>A language-based pipeline expands short activity names into diverse descriptions, synthesizes motion, and converts it into virtual on-body accelerometer signals for training HAR models.</p>
+      <p>An LLM writes diverse descriptions of an activity, text-to-motion models turn them into 3D motion, and the motion is converted into virtual on-body IMU signals for training HAR models. IMUGPT 2.0 adds a motion filter for implausible clips and a diversity metric that tells you when to stop generating.</p>
+      <div class="project-facts"><span><b>1.0</b> ISWC 2023 · Best Paper Honorable Mention</span><span><b>2.0</b> IMWUT 2024</span></div>
       <a class="project-link" href="/imugpt/">Project page <span aria-hidden="true">→</span></a>
-      <a class="project-link" href="https://dl.acm.org/doi/10.1145/3678545">Paper <span aria-hidden="true">↗</span></a>
+      <a class="project-link" href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper (1.0) <span aria-hidden="true">↗</span></a>
+      <a class="project-link" href="https://dl.acm.org/doi/10.1145/3678545">Paper (2.0) <span aria-hidden="true">↗</span></a>
       <a class="project-link" href="https://github.com/ZikangLeng/IMUGPT">Code <span aria-hidden="true">↗</span></a>
     </div>
   </article>
@@ -66,7 +68,7 @@ hide_title: true
   </article>
 
   <article class="project-card">
-    <div class="project-card__media project-card__media--photo"><img src="/images/fingerspeller.png" alt="Smart rings used for fingerspelling recognition"></div>
+    <div class="project-card__media project-card__media--photo"><img src="/images/fingerspeller.jpg" alt="Smart rings used for fingerspelling recognition"></div>
     <div class="project-card__content">
       <div class="project-meta"><span>Accessible interaction</span><strong>ASSETS 2023</strong></div>
       <h2>FingerSpeller</h2>

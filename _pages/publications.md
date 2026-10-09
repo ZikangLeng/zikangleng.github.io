@@ -21,10 +21,9 @@ hide_title: true
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title"><a href="https://arxiv.org/abs/2605.01238">EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a></h3>
-            <span class="publication-badge badge-accepted">Accepted</span>
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Edan Eyal*, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz</p>
-          <p class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 2026</p>
+          <p class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 10(4), 2026</p>
           <div class="publication-links"><a href="/edugage/">Project page →</a><a href="https://arxiv.org/abs/2605.01238">Paper ↗</a><a href="https://github.com/ZikangLeng/EduGage">Code ↗</a><a href="https://doi.org/10.6084/m9.figshare.32145994">Dataset ↗</a></div>
         </div>
       </div>
@@ -58,11 +57,12 @@ hide_title: true
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
-              <a href="https://arxiv.org/pdf/2510.06658">Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks</a>
+              <a href="https://arxiv.org/abs/2510.06658">Can We Hide Machines in the Crowd? Quantifying Equivalence in LLM-in-the-loop Annotation Tasks</a>
             </h3>
           </div>
           <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Damiano Spina, Johanne R Trippas</p>
-          <p class="publication-venue">SIGIR-AP, 2025</p>
+          <p class="publication-venue">ACM SIGIR Conference on Research and Development in Information Retrieval in the Asia Pacific Region (SIGIR-AP), 2025</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2510.06658">Paper ↗</a></div>
         </div>
       </div>
 
@@ -74,7 +74,8 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors">Cynthia Baseman, Yingtian Shi, <strong>Zikang Leng</strong>, Yaqi Liu, Gabriel Santamarina, Marcos C Schechter, Maya Fayfman, Thomas Ploetz, Rosa I Arriaga</p>
-          <p class="publication-venue">IEEE EMBS BHI, 2025</p>
+          <p class="publication-venue">IEEE-EMBS International Conference on Biomedical and Health Informatics (BHI), 2025</p>
+          <div class="publication-links"><a href="https://openreview.net/pdf?id=v0ZDvVLro6">Paper ↗</a></div>
         </div>
       </div>
 
@@ -82,7 +83,8 @@ hide_title: true
         <div class="publication-content">
           <div class="publication-header"><h3 class="publication-title"><a href="https://doi.org/10.2337/db25-259-OR">259-OR: Evaluating Diabetic Foot Ulcer Recognition Algorithms for Patients of Color</a></h3></div>
           <p class="publication-authors">Cynthia Baseman, <strong>Zikang Leng</strong>, Thomas Plötz, Gabriel Santamarina, Marcos C. Schechter, Maya Fayfman, Rosa I. Arriaga</p>
-          <p class="publication-venue">Diabetes, 74 (Supplement 1), 2025</p>
+          <p class="publication-venue">Diabetes, 74(Supplement 1), American Diabetes Association Scientific Sessions, 2025</p>
+          <div class="publication-links"><a href="https://doi.org/10.2337/db25-259-OR">Paper ↗</a></div>
         </div>
       </div>
 
@@ -94,7 +96,8 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors">Jiaman He, <strong>Zikang Leng</strong>, Dana McKay, Johanne R Trippas, Damiano Spina</p>
-          <p class="publication-venue">SIGIR, 2025</p>
+          <p class="publication-venue">Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR), 2602–2606, 2025</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/abs/10.1145/3726302.3730174">Paper ↗</a></div>
         </div>
       </div>
 
@@ -112,7 +115,7 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz</p>
-          <p class="publication-venue">IMWUT, 2024</p>
+          <p class="publication-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT), 8(3), 1–32, 2024</p>
           <div class="publication-links"><a href="/imugpt/">Project page →</a><a href="https://dl.acm.org/doi/10.1145/3678545">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
@@ -126,7 +129,8 @@ hide_title: true
             <span class="publication-badge badge-nomination">Best Paper Nomination</span>
           </div>
           <p class="publication-authors">Sungjin Hwang*, <strong>Zikang Leng*</strong>, Seungwoo Oh, Kwanguk Kim, Thomas Plötz</p>
-          <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2024</p>
+          <p class="publication-venue">Proceedings of the 2024 ACM International Symposium on Wearable Computers (ISWC), 82–88, 2024</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/abs/10.1145/3675095.3676617">Paper ↗</a></div>
         </div>
       </div>
 
@@ -138,7 +142,8 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Myeongul Jung*, Sungjin Hwang, Seungwoo Oh, Lizhe Zhang, Thomas Plötz, Kwanguk Kim</p>
-          <p class="publication-venue">HASCA within UbiComp/ISWC 2024</p>
+          <p class="publication-venue">HASCA Workshop, Companion of the 2024 ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp/ISWC), 537–544, 2024</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/abs/10.1145/3675094.3678452">Paper ↗</a></div>
         </div>
       </div>
     </div>
@@ -155,7 +160,7 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors">David Martin*, <strong>Zikang Leng*</strong>, Tan Gemicioglu, Jon Womack, Jocelyn Heath, William C Neubauer, Hyeokhyen Kwon, Thomas Plötz, Thad Starner</p>
-          <p class="publication-venue">ASSETS, 2023</p>
+          <p class="publication-venue">Proceedings of the 25th International ACM SIGACCESS Conference on Computers and Accessibility (ASSETS), 2023</p>
           <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3597638.3614491">Paper ↗</a><a href="https://github.com/ZikangLeng/FingerSpeller">Data ↗</a></div>
         </div>
       </div>
@@ -169,6 +174,7 @@ hide_title: true
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">Generative AI for Pervasive Computing (GenAI4PC) Symposium within UbiComp/ISWC, 2023</p>
+          <div class="publication-links"><a href="https://arxiv.org/abs/2310.12085">Paper ↗</a></div>
         </div>
       </div>
 
@@ -181,7 +187,7 @@ hide_title: true
             <span class="publication-badge badge-honorable">Best Paper Honorable Mention</span>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Hyeokhyen Kwon, Thomas Plötz</p>
-          <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2023</p>
+          <p class="publication-venue">Proceedings of the 2023 ACM International Symposium on Wearable Computers (ISWC), 39–43, 2023</p>
           <div class="publication-links"><a href="/imugpt/">Project page →</a><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
@@ -194,7 +200,8 @@ hide_title: true
             </h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Yash Jain, Hyeokhyen Kwon, Thomas Plötz</p>
-          <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2023</p>
+          <p class="publication-venue">Proceedings of the 2023 ACM International Symposium on Wearable Computers (ISWC), 55–59, 2023</p>
+          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3594738.3611364">Paper ↗</a></div>
         </div>
       </div>
     </div>

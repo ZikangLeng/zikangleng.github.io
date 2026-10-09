@@ -41,20 +41,20 @@ redirect_from:
     <a class="text-link" href="/news/">View all news <span aria-hidden="true">→</span></a>
   </div>
   <div class="news-timeline">
-    <a class="news-item" href="https://arxiv.org/abs/2605.01238">
+    <a class="news-item" href="/edugage/">
       <time datetime="2026-09"><span>Sep</span> 2026</time>
       <span class="news-item__marker" aria-hidden="true"></span>
       <p><span class="news-item__emoji" aria-hidden="true">🎉</span> Our paper <strong>EduGage</strong>, on multimodal sensing for momentary engagement assessment in self-guided learning, has been accepted to <strong>ACM IMWUT</strong>!</p>
     </a>
     <a class="news-item" href="https://behaviorai.ai">
-      <time datetime="2026"><span></span>2026</time>
+      <time datetime="2026-08"><span>Aug</span> 2026</time>
       <span class="news-item__marker" aria-hidden="true"></span>
       <p><span class="news-item__emoji" aria-hidden="true">💼</span> I joined <strong>Behavior AI</strong> as a Machine Learning Engineer Intern!</p>
     </a>
-    <a class="news-item" href="https://arxiv.org/abs/2506.11773">
-      <time datetime="2026"><span></span>2026</time>
+    <a class="news-item" href="/agentsense/">
+      <time datetime="2025-11"><span>Nov</span> 2025</time>
       <span class="news-item__marker" aria-hidden="true"></span>
-      <p><span class="news-item__emoji" aria-hidden="true">📖</span> Our paper <strong>AgentSense</strong>, on virtual sensor data generation using LLM-guided agents, was published at <strong>AAAI 2026</strong>!</p>
+      <p><span class="news-item__emoji" aria-hidden="true">📖</span> Our paper <strong>AgentSense</strong>, on virtual sensor data generation using LLM-guided agents, was accepted at <strong>AAAI 2026</strong>!</p>
     </a>
   </div>
 </section>
@@ -78,12 +78,12 @@ redirect_from:
       <div class="featured-card__body"><div class="project-meta"><span>Multimodal sensing</span><strong>IMWUT 2026</strong></div><h3>EduGage</h3><p>Estimating momentary engagement during self-guided video learning using synchronized wearable, physiological, eye-tracking, and behavioral signals.</p><a href="/edugage/">Project page <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2605.01238">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/EduGage">Code <span aria-hidden="true">↗</span></a><a href="https://doi.org/10.6084/m9.figshare.32145994">Dataset <span aria-hidden="true">↗</span></a></div>
     </article>
     <article class="featured-card">
-      <div class="featured-card__image featured-card__image--contain"><img src="/images/agentsense.png" alt="AgentSense pipeline: an LLM generates personas and routines that embodied agents execute in sensor-instrumented simulated homes"></div>
+      <div class="featured-card__image"><img src="/images/agentsense-card.jpg" alt="AgentSense: an LLM-driven agent watching TV on the sofa in a simulated VirtualHome living room"></div>
       <div class="featured-card__body"><div class="project-meta"><span>Embodied AI</span><strong>AAAI 2026</strong></div><h3>AgentSense</h3><p>LLM-guided agents live out diverse routines in simulated smart homes, producing scalable ambient sensor data without collecting it from people.</p><a href="/agentsense/">Project page <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2506.11773">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/AgentSense">Code <span aria-hidden="true">↗</span></a></div>
     </article>
     <article class="featured-card featured-card--wide">
-      <div class="featured-card__image featured-card__image--contain"><img src="/images/imugpt2.png" alt="IMUGPT 2.0 pipeline from language prompts to virtual inertial sensor data"></div>
-      <div class="featured-card__body"><div class="project-meta"><span>Virtual sensor data</span><strong>IMWUT 2024</strong></div><h3>IMUGPT 2.0</h3><p>Turning natural-language activity descriptions into diverse virtual IMU signals through motion synthesis and cross-modality transfer.</p><a href="/imugpt/">Project page <span aria-hidden="true">→</span></a><a href="https://dl.acm.org/doi/10.1145/3678545">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/IMUGPT">Code <span aria-hidden="true">↗</span></a></div>
+      <div class="featured-card__image featured-card__image--contain"><img src="/images/imugpt-card-wide.png" alt="IMUGPT: LLM-written activity descriptions become generated 3D motion and virtual forearm accelerometer signals for jumping, climbing stairs and running"></div>
+      <div class="featured-card__body"><div class="project-meta"><span>Virtual sensor data</span><strong>ISWC 2023 · IMWUT 2024</strong></div><h3>IMUGPT</h3><p>Describe an activity in words and get wearable sensor data back: LLM-written descriptions drive text-to-motion generation, and the motion becomes virtual IMU signals for training activity recognition. IMUGPT 1.0 received a Best Paper Honorable Mention at ISWC 2023; IMUGPT 2.0 adds a motion filter and a diversity metric that tells you when to stop generating.</p><a href="/imugpt/">Project page <span aria-hidden="true">→</span></a><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper (1.0) <span aria-hidden="true">↗</span></a><a href="https://dl.acm.org/doi/10.1145/3678545">Paper (2.0) <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/IMUGPT">Code <span aria-hidden="true">↗</span></a></div>
     </article>
   </div>
 </section>
