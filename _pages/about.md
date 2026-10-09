@@ -10,7 +10,6 @@ redirect_from:
   - /about.html
 ---
 
-
 <section class="home-hero">
   <div class="home-hero__copy">
     <span class="eyebrow">Human-centered AI · Ubiquitous computing · Multimodal sensing</span>
@@ -37,7 +36,6 @@ redirect_from:
   </div>
 </section>
 
-
 <section class="latest-news section-block" aria-labelledby="latest-news-title">
   <div class="section-heading latest-news__heading">
     <h2 id="latest-news-title">Latest News</h2>
@@ -62,14 +60,33 @@ redirect_from:
   </div>
 </section>
 
-
 <section class="research-intro section-block">
   <div><span class="section-kicker">Research vision</span><h2>From simulated worlds to real human moments</h2></div>
   <p>I develop methods that make human-centered sensing more capable and more practical: generating virtual sensor data when real data is scarce, learning from physiological and behavioral signals, and designing systems that work across people, environments, and modalities.</p>
 </section>
 
-
 <section class="research-pillars" aria-label="Research areas">
   <article class="pillar-card"><span class="pillar-card__number">01</span><h3>Generative sensing</h3><p>LLMs and embodied agents generate diverse, privacy-preserving motion and ambient sensor data for human activity recognition.</p><div class="tag-row"><span>LLMs</span><span>Embodied AI</span><span>Simulation</span></div></article>
   <article class="pillar-card"><span class="pillar-card__number">02</span><h3>Multimodal understanding</h3><p>Wearable, physiological, visual, and interaction signals reveal engagement and behavior in realistic settings.</p><div class="tag-row"><span>Wearables</span><span>Physiology</span><span>HCI</span></div></article>
   <article class="pillar-card"><span class="pillar-card__number">03</span><h3>Inclusive human-centered AI</h3><p>Data and models designed around real people—including accessibility and health contexts—rather than idealized benchmarks.</p><div class="tag-row"><span>Accessibility</span><span>Health</span><span>Responsible AI</span></div></article>
+</section>
+
+<section class="section-block featured-work">
+  <div class="section-heading"><div><span class="section-kicker">Featured work</span><h2>Current projects</h2></div><a class="text-link" href="/projects/">View all projects <span aria-hidden="true">→</span></a></div>
+  <div class="featured-grid">
+    <article class="featured-card">
+      <div class="featured-card__image featured-card__image--contain"><img src="/images/edugage-setup.jpg" alt="EduGage study setup: a participant wearing head, ear, wrist, finger, and chest sensors at the video-learning workstation"></div>
+      <div class="featured-card__body"><div class="project-meta"><span>Multimodal sensing</span><strong>IMWUT 2026</strong></div><h3>EduGage</h3><p>Estimating momentary engagement during self-guided video learning using synchronized wearable, physiological, eye-tracking, and behavioral signals.</p><a href="/edugage/">Project page <span aria-hidden="true">→</span></a><a href="https://arxiv.org/abs/2605.01238">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/EduGage">Code <span aria-hidden="true">↗</span></a><a href="https://doi.org/10.6084/m9.figshare.32145994">Dataset <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <article class="featured-card">
+      <div class="featured-card__image"><img src="/images/agentsense-card.jpg" alt="AgentSense: an LLM-driven agent watching TV on the sofa in a simulated VirtualHome living room"></div>
+      <div class="featured-card__body"><div class="project-meta"><span>Embodied AI</span><strong>AAAI 2026</strong></div><h3>AgentSense</h3><p>LLM-guided agents live out diverse routines in simulated smart homes, producing scalable ambient sensor data without collecting it from people.</p><a href="/agentsense/">Project page <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1609/aaai.v40i3.37169">Paper <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/AgentSense">Code <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <article class="featured-card featured-card--wide">
+      <div class="featured-card__image featured-card__image--contain"><img src="/images/imugpt-card-wide.png" alt="IMUGPT: LLM-written activity descriptions become generated 3D motion and virtual forearm accelerometer signals for jumping, climbing stairs and running"></div>
+      <div class="featured-card__body"><div class="project-meta"><span>Virtual sensor data</span><strong>ISWC 2023 · IMWUT 2024</strong></div><h3>IMUGPT</h3><p>Describe an activity in words and get wearable sensor data back: LLM-written descriptions drive text-to-motion generation, and the motion becomes virtual IMU signals for training activity recognition. IMUGPT 1.0 received a Best Paper Honorable Mention at ISWC 2023; IMUGPT 2.0 adds a motion filter and a diversity metric that tells you when to stop generating.</p><a href="/imugpt/">Project page <span aria-hidden="true">→</span></a><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper (1.0) <span aria-hidden="true">↗</span></a><a href="https://dl.acm.org/doi/10.1145/3678545">Paper (2.0) <span aria-hidden="true">↗</span></a><a href="https://github.com/ZikangLeng/IMUGPT">Code <span aria-hidden="true">↗</span></a></div>
+    </article>
+  </div>
+</section>
+
+<section class="contact-strip"><div><span class="section-kicker">Let’s connect</span><h2>Interested in sensing, simulation, or human-centered AI?</h2></div><a class="button button--primary" href="mailto:zleng7@gatech.edu">Get in touch</a></section>
