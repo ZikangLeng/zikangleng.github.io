@@ -31,6 +31,18 @@ hide_title: true
         <div class="publication-content">
           <div class="publication-header">
             <h3 class="publication-title">
+              <a href="https://doi.org/10.1145/3830727.3834837">StitchSense: Smart-Garment Sensing as a Source Domain for Watch-Based Activity Recognition</a>
+            </h3>
+          </div>
+          <p class="publication-authors">Ishita Datta, <strong>Zikang Leng</strong>, Rachit Bhayana, Thomas Plötz</p>
+          <p class="publication-venue">Proceedings of the 2026 ACM International Symposium on Wearable Computers (ISWC), 22–28, 2026</p>
+          <div class="publication-links"><a href="https://doi.org/10.1145/3830727.3834837">Paper ↗</a></div>
+        </div>
+      </div>
+      <div class="publication-card">
+        <div class="publication-content">
+          <div class="publication-header">
+            <h3 class="publication-title">
               <a href="https://arxiv.org/abs/2506.11773">AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments</a>
             </h3>
           </div>

@@ -16,6 +16,8 @@ hide_title: true
 
 <h2 class="publication-year-header">2026</h2>
 <div class="news-timeline news-timeline--page">
+  <div class="news-item"><time datetime="2026-10">Oct</time><span class="news-item__marker" aria-hidden="true"></span>
+    <p><span class="news-item__emoji" aria-hidden="true">📖</span> Our paper <a href="https://doi.org/10.1145/3830727.3834837">StitchSense: Smart-Garment Sensing as a Source Domain for Watch-Based Activity Recognition</a> appears in the proceedings of <a href="https://dl.acm.org/conference/iswc">ISWC 2026</a> (UbiComp/ISWC 2026, Shanghai).</p></div>
   <div class="news-item"><time datetime="2026-09">Sep</time><span class="news-item__marker" aria-hidden="true"></span>
     <p><span class="news-item__emoji" aria-hidden="true">📖</span> Our paper <a href="https://arxiv.org/abs/2605.01238">EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a> was accepted to <a href="https://dl.acm.org/journal/imwut">IMWUT</a>. It releases synchronized EEG, ECG, PPG, EDA, IMU, skin-temperature and eye-tracking data with minute-level engagement ratings, plus a benchmark. <a href="/edugage/">Project page</a> · <a href="https://github.com/ZikangLeng/EduGage">code</a> · <a href="https://doi.org/10.6084/m9.figshare.32145994">dataset</a></p></div>
   <div class="news-item"><time datetime="2026-08">Aug</time><span class="news-item__marker" aria-hidden="true"></span>

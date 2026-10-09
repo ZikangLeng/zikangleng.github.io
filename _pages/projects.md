@@ -58,6 +58,17 @@ hide_title: true
   </article>
 
   <article class="project-card">
+    <div class="project-card__media project-card__media--contain"><img src="/images/stitchsense.svg" alt="StitchSense: sensing from a smart garment is used as the source domain and transferred to a smartwatch for activity recognition"></div>
+    <div class="project-card__content">
+      <div class="project-meta"><span>Smart garments</span><strong>ISWC 2026</strong></div>
+      <h2>StitchSense</h2>
+      <p class="project-card__lead">Learn from the garment, recognize on the watch.</p>
+      <p>Uses sensing from a smart garment as a source domain for watch-based human activity recognition, so data from clothing can help the device people already wear.</p>
+      <a class="project-link" href="https://doi.org/10.1145/3830727.3834837">Paper <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+
+  <article class="project-card">
     <div class="project-card__media project-card__media--contain"><img src="/images/emotion.png" alt="Wearable IMU emotion recognition system diagram"></div>
     <div class="project-card__content">
       <div class="project-meta"><span>Affective computing</span><strong>HASCA 2024</strong></div>
