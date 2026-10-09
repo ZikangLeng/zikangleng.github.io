@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AgentSense</title>
+<meta name="description" content="AgentSense (AAAI 2026): LLM-guided embodied agents live out generated routines in simulated smart homes to produce labelled ambient sensor data.">
+<meta property="og:title" content="AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments">
+<meta property="og:description" content="LLM personas and routines, embodied agents, simulated smart homes, and ambient sensor data that improves activity recognition on 5 real datasets.">
+<meta property="og:image" content="https://zikangleng.github.io/agentsense/img/agentsense_teaser.gif">
+<link rel="icon" href="img/agentsense_mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one reading column that opens to full width for the live floor plan and the results.
+   Identity: the AgentSense logo's cyan -> blue -> violet on a cool, airy ground; sensor-console mono for event data. */
+:root{
+  --bg:#F5F7FC; --surface:#FFFFFF; --ink:#16204F; --muted:#5E6785; --line:#DDE3F0; --soft:#EEF2FB;
+  --cyan:#22C9E6; --blue:#2F6BFF; --violet:#7B3CF5; --on:#22C9E6;
+  --grad:linear-gradient(100deg,#22C9E6 0%,#2F6BFF 50%,#7B3CF5 100%);
+  --r-bedroom:#E6EBFF; --r-kitchen:#DFF6FA; --r-bathroom:#E8F3FF; --r-livingroom:#EFE8FF; --r-other:#EEF1F6;
+  --furn:#D3DAEA; --wall:#A7B2CF; --real:#9AA6C6;
+  --display:"Sora","Segoe UI",system-ui,sans-serif; --body:"Nunito Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace; --col:70ch;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D1226; --surface:#141B33; --ink:#E8ECFA; --muted:#9BA4C2; --line:#27304F; --soft:#182041;
+  --r-bedroom:#1E2752; --r-kitchen:#173A47; --r-bathroom:#1B2F52; --r-livingroom:#2A2250; --r-other:#1B2238;
+  --furn:#2D375C; --wall:#4A5683; --real:#5E6A94; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1226; --surface:#141B33; --ink:#E8ECFA; --muted:#9BA4C2; --line:#27304F; --soft:#182041;
+  --r-bedroom:#1E2752; --r-kitchen:#173A47; --r-bathroom:#1B2F52; --r-livingroom:#2A2250; --r-other:#1B2238;
+  --furn:#2D375C; --wall:#4A5683; --real:#5E6A94; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62}
+.wrap{padding-inline:max(16px,4vw)}
+.col{max-width:var(--col);margin-inline:auto}
+.wide{max-width:1200px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.5rem,2.8vw,2.1rem);letter-spacing:-.01em}
+h3{font-size:1.05rem}
+p{margin:0}
+a{color:var(--blue)}
+.eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+section{padding-block:clamp(44px,7vw,84px);display:grid;gap:22px}
+.sec-head{display:grid;gap:10px;max-width:var(--col)}
+.lede{color:var(--muted);font-size:1.02rem}
+/* top bar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:.92rem}
+.topbar a{color:var(--muted);text-decoration:none}
+.topbar a:hover{color:var(--ink)}
+.theme{font:inherit;color:var(--muted);background:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;cursor:pointer}
+/* hero */
+.hero{display:grid;justify-items:center;text-align:center;gap:16px;padding-block:24px 8px}
+.hero img.logo{width:min(320px,72vw);height:auto}
+.hero .title{font-family:var(--display);font-size:clamp(1.25rem,2.6vw,1.75rem);font-weight:600;max-width:34ch}
+.authors{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 18px;font-size:1rem}
+.authors a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.affil{color:var(--muted);font-size:.92rem}
+.venue{font-family:var(--display);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.15rem}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:var(--ink);color:var(--bg);
+  text-decoration:none;font-weight:600;font-size:.92rem;border:0;cursor:pointer;font-family:var(--body)}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;width:100%;max-width:820px;margin-top:6px}
+@media (max-width:620px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.stat b{display:block;font-family:var(--display);font-size:1.7rem;line-height:1.1}
+.stat span{font-size:.85rem;color:var(--muted)}
+.tldr{font-size:1.1rem;max-width:62ch;text-align:center}
+/* live home */
+.live{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px}
+@media (max-width:900px){.live{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.plan{position:relative;padding:10px;display:grid;gap:8px;min-width:0}
+.plan canvas{width:100%;display:block}
+#floor{aspect-ratio:4/3;max-width:100%}
+#timeline{height:56px;cursor:pointer}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button,.chipbtn{font:inherit;font-size:.85rem;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.play{width:40px;height:40px;border-radius:50%;border:0;background:var(--grad);color:#fff;font-size:1rem;cursor:pointer;flex:none}
+select{font:inherit;font-size:.9rem;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);max-width:100%}
+.side{padding:16px;display:grid;gap:14px;align-content:start;min-width:0}
+.clock{font-family:var(--mono);font-size:2.1rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.persona{display:flex;gap:12px;align-items:flex-start}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:700;flex:none}
+.persona .who b{font-family:var(--display)}
+.persona .who span{display:block;font-size:.86rem;color:var(--muted)}
+.lab{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.action{font-family:var(--display);font-size:1.15rem;font-weight:600}
+.room-tag{font-size:.82rem;color:var(--muted)}
+.labels{display:flex;flex-wrap:wrap;gap:6px}
+.labels span{font-family:var(--mono);font-size:.74rem;padding:3px 8px;border-radius:7px;background:var(--soft);border:1px solid var(--line);white-space:nowrap}
+.labels span i{font-style:normal;color:var(--muted)}
+.ticker{font-family:var(--mono);font-size:.8rem;line-height:1.55;background:var(--soft);border-radius:10px;padding:10px 12px;min-height:9.4em;overflow:hidden;font-variant-numeric:tabular-nums}
+.ticker div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ticker .on{color:var(--ink)} .ticker .off{color:var(--muted)} .ticker .dev{color:var(--violet)}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:.82rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+/* pipeline */
+.steps{display:flex;flex-wrap:wrap;gap:8px}
+.steps button{font:inherit;font-size:.9rem;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.steps button[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent}
+.steps button b{font-family:var(--mono);margin-right:6px}
+pre.excerpt{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;font-family:var(--mono);font-size:.82rem;line-height:1.55;white-space:pre-wrap;overflow-x:auto;max-height:380px}
+/* small multiples */
+.homes{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.homes{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.homes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.homes figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;display:grid;gap:4px}
+.homes canvas{width:100%;aspect-ratio:1/1;display:block}
+.homes figcaption{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-align:center}
+/* personas */
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px;align-content:start}
+.person header{display:flex;gap:10px;align-items:center}
+.person .meta{font-size:.84rem;color:var(--muted)}
+.person p{font-size:.88rem;color:var(--muted)}
+.tag{font-family:var(--mono);font-size:.7rem;padding:2px 7px;border-radius:6px;background:var(--soft);border:1px solid var(--line);white-space:nowrap}
+details summary{cursor:pointer;font-size:.85rem;color:var(--blue)}
+/* charts */
+.chart-card{padding:16px;display:grid;gap:12px;min-width:0;align-content:start}
+.chart-card svg{width:100%;height:auto;display:block;overflow:visible}
+.duo{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+@media (max-width:900px){.duo{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.duo{grid-template-columns:1fr}}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:.8rem;padding:6px 9px;border-radius:8px;font-family:var(--mono);z-index:9;white-space:nowrap}
+.note{font-size:.88rem;color:var(--muted)}
+/* media */
+.media{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:820px){.media{grid-template-columns:1fr}}
+video{width:100%;border-radius:14px;background:#000;display:block}
+.renders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.renders img,.renders video{width:100%;border-radius:12px;display:block}
+pre.bib{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;overflow-x:auto;font-family:var(--mono);font-size:.82rem;margin:0}
+footer{padding-block:40px;color:var(--muted);font-size:.85rem;text-align:center}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="topbar wide"><a href="/">← Zikang Leng</a><button class="theme" id="themeBtn" type="button">Theme</button></nav>
+
+<header class="hero wide">
+  <img class="logo" src="img/agentsense_logo.svg" alt="AgentSense" width="320" height="240">
+  <p class="title">Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments</p>
+  <div class="authors">
+    <a href="/">Zikang Leng*</a><span>Megha Thukral*</span><span>Yaqi Liu*</span><span>Hrudhai Rajasekhar</span>
+    <span>Shruthi K. Hiremath</span><span>Jiaman He</span><a href="https://ploetzlab.net/">Thomas Plötz</a>
+  </div>
+  <div class="affil">Georgia Institute of Technology · *equal contribution</div>
+  <div class="venue">AAAI 2026</div>
+  <div class="links">
+    <a class="btn" href="https://ojs.aaai.org/index.php/AAAI/article/view/37169">Paper</a>
+    <a class="btn ghost" href="https://arxiv.org/abs/2506.11773">arXiv</a>
+    <a class="btn ghost" href="https://github.com/ZikangLeng/AgentSense">Code</a>
+    <a class="btn ghost" href="#cite">BibTeX</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b class="grad-text">18</b><span>LLM-generated personas</span></div>
+    <div class="stat"><b class="grad-text">22</b><span>simulated homes</span></div>
+    <div class="stat"><b class="grad-text">250</b><span>simulated days</span></div>
+    <div class="stat"><b class="grad-text">5</b><span>real datasets improved</span></div>
+  </div>
+</header>
+
+<div class="col" style="padding-top:34px">
+  <p class="tldr">Smart-home activity recognition is starved for labelled data. AgentSense generates it: an LLM writes residents and their routines, embodied agents live out those routines in a simulated home full of ambient sensors, and the sensor stream pretrains real-world recognisers.</p>
+</div>
+
+<!-- ================= live home ================= -->
+<section class="wide" id="live">
+  <div class="sec-head">
+    <div class="eyebrow">Interactive</div>
+    <h2>A day in a simulated smart home</h2>
+    <p class="lede">Replay a generated day. The agent follows its LLM-written routine through the home, motion sensors fire when it is in range, doors and appliances report when they are used, and every step carries the activity labels of five real smart-home datasets. Click the timeline to jump to any moment.</p>
+  </div>
+  <div class="live">
+    <div class="card plan">
+      <canvas id="floor" aria-label="Floor plan of the simulated home with the agent's position and sensor states"></canvas>
+      <canvas id="timeline" aria-label="Activity timeline of the day; click to jump"></canvas>
+      <div class="controls">
+        <button class="play" id="play" type="button" aria-label="Pause">❚❚</button>
+        <div class="seg" id="speed" role="group" aria-label="Playback speed">
+          <button type="button" data-s="30">30×</button><button type="button" data-s="120" aria-pressed="true">120×</button><button type="button" data-s="480">480×</button>
+        </div>
+        <label class="seg" style="align-items:center;gap:6px;font-size:.85rem;color:var(--muted)"><input type="checkbox" id="skipIdle" checked> skip idle time</label>
+        <select id="daySel" aria-label="Generated day"></select>
+      </div>
+      <div class="legend"><span><i style="background:var(--violet)"></i>agent</span><span><i style="background:var(--on)"></i>motion sensor firing</span><span><i style="background:var(--wall)"></i>sensor idle</span><span><i style="background:#F5A623"></i>door / appliance used</span></div>
+    </div>
+    <aside class="card side" aria-live="polite">
+      <div class="persona"><div class="avatar" id="pAvatar">A</div><div class="who"><b id="pName">—</b><span id="pMeta">—</span></div></div>
+      <div><div class="lab">Simulated clock</div><div class="clock" id="clock">--:--</div></div>
+      <div><div class="lab">Current action</div><div class="action" id="action">—</div><div class="room-tag" id="room">—</div></div>
+      <div><div class="lab">Labels in five real datasets</div><div class="labels" id="labels"></div></div>
+      <div><div class="lab">Sensor event stream</div><div class="ticker" id="ticker"></div></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= pipeline ================= -->
+<section class="wide">
+  <div class="sec-head">
+    <div class="eyebrow">How it works</div>
+    <h2>From a persona to a sensor stream</h2>
+    <p class="lede">Each stage is generated, not hand-written. Step through real outputs of the pipeline for one persona.</p>
+  </div>
+  <div class="steps" id="steps" role="group" aria-label="Pipeline step"></div>
+  <pre class="excerpt" id="excerpt"></pre>
+  <p class="note" id="stepNote"></p>
+</section>
+
+<!-- ================= 10 homes ================= -->
+<section class="wide">
+  <div class="sec-head">
+    <div class="eyebrow">Diversity</div>
+    <h2>One persona, ten homes</h2>
+    <p class="lede">The same Monday routine, executed in ten different VirtualHome layouts. The routine is grounded to whatever objects each home actually has, so every layout yields a different trajectory and sensor stream.</p>
+  </div>
+  <div class="homes" id="homes"></div>
+</section>
+
+<!-- ================= personas ================= -->
+<section class="wide">
+  <div class="sec-head">
+    <div class="eyebrow">Residents</div>
+    <h2>Eighteen generated personas</h2>
+    <p class="lede">Ages, occupations, health conditions and lifestyles written by the LLM. Each persona's weekly schedule and daily routines follow from its description.</p>
+  </div>
+  <div class="people" id="people"></div>
+</section>
+
+<!-- ================= results ================= -->
+<section class="wide">
+  <div class="sec-head">
+    <div class="eyebrow">Results</div>
+    <h2>Pretraining on AgentSense data helps on every real dataset</h2>
+    <p class="lede">A recogniser pretrained on virtual data and fine-tuned on real data, against the same model trained on real data only. Mean ± std over three folds.</p>
+  </div>
+  <div class="card chart-card">
+    <div class="controls">
+      <div class="seg" id="metricSel" role="group" aria-label="Metric">
+        <button type="button" data-m="Macro F1 Score" aria-pressed="true">Macro F1</button><button type="button" data-m="Accuracy">Accuracy</button><button type="button" data-m="Weighted F1 Score">Weighted F1</button>
+      </div>
+      <div class="seg" id="modelSel" role="group" aria-label="Model">
+        <button type="button" data-k="TDOST-Basic" aria-pressed="true">TDOST-Basic</button><button type="button" data-k="TDOST-Temporal">TDOST-Temporal</button>
+      </div>
+    </div>
+    <svg id="bars" viewBox="0 0 900 340" role="img" aria-label="Grouped bar chart of real-only versus real plus virtual performance"></svg>
+    <div class="legend"><span><i style="background:var(--real);border-radius:3px"></i>Real only</span><span><i style="background:var(--blue);border-radius:3px"></i>Real + AgentSense (pretrain → fine-tune)</span></div>
+  </div>
+  <div class="sec-head" style="margin-top:18px">
+    <h3>Largest gains when real data is scarce</h3>
+    <p class="lede">Performance as the amount of real training data grows (TDOST-Basic). Hover for values.</p>
+  </div>
+  <div class="card chart-card">
+    <div class="seg" id="fig2Sel" role="group" aria-label="Metric">
+      <button type="button" data-m="F1-macro" aria-pressed="true">Macro F1</button><button type="button" data-m="Accuracy">Accuracy</button><button type="button" data-m="F1-weighted">Weighted F1</button>
+    </div>
+    <div class="duo" id="fig2"></div>
+  </div>
+  <div class="sec-head" style="margin-top:18px">
+    <h3>Every kind of diversity adds up</h3>
+    <p class="lede">Aruba macro F1 with a fixed amount of virtual data, adding homes, days of the week and personas (TDOST-Basic).</p>
+  </div>
+  <div class="card chart-card"><svg id="ablation" viewBox="0 0 900 220" role="img" aria-label="Ablation: macro F1 as diversity is added"></svg></div>
+</section>
+
+<!-- ================= media ================= -->
+<section class="wide" id="media">
+  <div class="sec-head">
+    <div class="eyebrow">Simulation</div>
+    <h2>Inside the extended VirtualHome</h2>
+  </div>
+  <div class="media">
+    <figure style="margin:0;display:grid;gap:8px"><video src="media/environment.mp4" poster="media/environment_poster.jpg" controls muted loop playsinline preload="metadata"></video>
+      <figcaption class="note">Top-down view of an agent moving between rooms while executing its routine (trail in red).</figcaption></figure>
+    <div class="renders" id="renders"><p class="note">3D renders of agents carrying out generated routines will appear here.</p></div>
+  </div>
+</section>
+
+<section class="col" id="cite">
+  <div class="eyebrow">Cite</div>
+  <h2>BibTeX</h2>
+  <pre class="bib" id="bib">@inproceedings{leng2026agentsense,
+  title     = {AgentSense: Virtual Sensor Data Generation Using LLM Agents
+               in Simulated Home Environments},
+  author    = {Leng, Zikang and Thukral, Megha and Liu, Yaqi and
+               Rajasekhar, Hrudhai and Hiremath, Shruthi K. and He, Jiaman
+               and Pl{\"o}tz, Thomas},
+  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume    = {40}, number = {3}, pages = {1891--1899},
+  year      = {2026}
+}</pre>
+  <div><button class="btn ghost" id="copyBib" type="button">Copy BibTeX</button></div>
+</section>
+<footer class="wide">AgentSense builds on <a href="http://virtual-home.org/">VirtualHome</a>. Sensor placement in the replay follows the paper's rule (1–3 motion sensors per room by floor area, near the corners).</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const getJSON=u=>fetch(u).then(r=>{if(!r.ok) throw new Error(u+" "+r.status); return r.json();});
+
+// ---------- theme toggle (per-viewer convenience)
+const themeBtn=$("#themeBtn");
+try{const t=localStorage.getItem("as-theme"); if(t) document.documentElement.dataset.theme=t;}catch(_){}
+themeBtn.addEventListener("click",()=>{const cur=document.documentElement.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  const nx=cur==="dark"?"light":"dark"; document.documentElement.dataset.theme=nx; try{localStorage.setItem("as-theme",nx);}catch(_){}
+  redrawAll();});
+
+const DAYS=[
+  {f:"Aaron_1_env0_Monday", label:"Aaron · home 0 · Monday (paper example)", persona:"Aaron", paper:true},
+  {f:"Jacob_env31_Saturday", label:"Jacob · home 31 · Saturday", persona:"Jacob"},
+  {f:"Jessica_env28_Sunday", label:"Jessica · home 28 · Sunday", persona:"Jessica"},
+  {f:"David_env8_Thursday", label:"David · home 8 · Thursday", persona:"David"},
+  {f:"Kim_env22_Tuesday", label:"Kim · home 22 · Tuesday", persona:"Kim"},
+  {f:"Emily_3_env43_Wednesday", label:"Emily (3) · home 43 · Wednesday", persona:"Emily_3"}];
+const ROOMS={bedroom:"--r-bedroom",kitchen:"--r-kitchen",bathroom:"--r-bathroom",livingroom:"--r-livingroom"};
+const ROOMLINE={bedroom:"#5B7BFF",kitchen:"#22C9E6",bathroom:"#3FA2F7",livingroom:"#8A5BF5"};
+let personas={};
+
+// ================= live floor plan =================
+const floor=$("#floor"), fctx=floor.getContext("2d"), tl=$("#timeline"), tctx=tl.getContext("2d");
+let home=null, day=null, t=0, tStart=0, tEnd=1, playing=!reduce, speed=120, last=performance.now();
+let pathT,pathX,pathZ, breaks=[], view=null;
+
+function clock(s){ s=Math.floor(s)%86400; if(s<0) s+=86400; const h=Math.floor(s/3600), m=Math.floor(s%3600/60), ss=s%60; return [h,m,ss]; }
+function fmt(s,sec){ const [h,m,ss]=clock(s); return String(h).padStart(2,"0")+":"+String(m).padStart(2,"0")+(sec?":"+String(ss).padStart(2,"0"):""); }
+function bsearch(arr,v){ let lo=0,hi=arr.length-1; if(v<arr[0]) return -1; while(lo<hi){const mid=(lo+hi+1)>>1; if(arr[mid]<=v) lo=mid; else hi=mid-1;} return lo; }
+
+async function loadDay(i){
+  const d=DAYS[i];
+  day=await getJSON("data/days/"+d.f+".json");
+  home=await getJSON("data/homes/env_"+day.env+".json");
+  pathT=Float64Array.from(day.path,p=>p[0]); pathX=Float64Array.from(day.path,p=>p[1]); pathZ=Float64Array.from(day.path,p=>p[2]);
+  breaks=(day.breaks||[]).slice().sort((a,b)=>a-b);
+  day.actions.sort((a,b)=>a.t0-b.t0); day.motion_events.sort((a,b)=>a.t-b.t); day.device_events.sort((a,b)=>a.t-b.t);
+  tStart=Math.min(pathT[0],day.actions[0].t0); tEnd=Math.max(pathT[pathT.length-1],day.actions[day.actions.length-1].t1||day.actions[day.actions.length-1].t0);
+  t=tStart;
+  const p=personas[d.persona]; const name=d.paper?"Aaron (paper example)":(p?p.name+(d.persona.includes("_")?" ("+d.persona.split("_")[1]+")":""):d.persona);
+  $("#pName").textContent=name; $("#pAvatar").textContent=(p?p.name:d.persona)[0];
+  $("#pMeta").textContent=p?`${p.age} · ${p.occupation}${p.health&&p.health!=="none"?" · "+p.health:""}`:"";
+  sizeCanvases(); drawTimeline(); frame();
+}
+function sizeCanvases(){
+  const dpr=Math.min(devicePixelRatio,2);
+  for(const c of [floor,tl]){ const w=c.clientWidth, h=c.clientHeight; c.width=Math.round(w*dpr); c.height=Math.round(h*dpr); c.getContext("2d").setTransform(dpr,0,0,dpr,0,0); }
+  if(home){ const [x0,z0,x1,z1]=home.bounds, W=floor.clientWidth, H=floor.clientHeight, pad=18;
+    const s=Math.min((W-2*pad)/(x1-x0),(H-2*pad)/(z1-z0));
+    view={s, ox:(W-(x1-x0)*s)/2-x0*s, oz:(H-(z1-z0)*s)/2+z1*s}; }
+}
+const P=(x,z)=>[view.ox+x*view.s, view.oz-z*view.s];
+
+function posAt(tt){
+  let i=bsearch(pathT,tt); if(i<0) return [pathX[0],pathZ[0]]; if(i>=pathT.length-1) return [pathX[i],pathZ[i]];
+  const t0=pathT[i], t1=pathT[i+1];
+  if(breaks.some(b=>b>t0&&b<=t1) || t1-t0>1.2) return [pathX[i],pathZ[i]];   // stationary gap or teleport
+  const a=(tt-t0)/(t1-t0); return [pathX[i]+(pathX[i+1]-pathX[i])*a, pathZ[i]+(pathZ[i+1]-pathZ[i])*a];
+}
+function sensorsOn(tt){ const st={}; for(const e of day.motion_events){ if(e.t>tt) break; st[e.sensor]=e.state==="ON"; } return st; }
+function deviceFlash(tt){ const out={}; for(const e of day.device_events){ if(e.t>tt) break; if(tt-e.t<6) out[e.obj]=e.kind; } return out; }
+function actionAt(tt){ let cur=null; for(const a of day.actions){ if(a.t0<=tt) cur=a; else break; } return cur; }
+
+function drawFloor(){
+  if(!view) return;
+  const W=floor.clientWidth, H=floor.clientHeight; fctx.clearRect(0,0,W,H);
+  const wall=css("--wall"), furn=css("--furn"), on=css("--on"), ink=css("--ink"), muted=css("--muted");
+  for(const r of home.rooms){ const [x0,z0,x1,z1]=r.rect, a=P(x0,z1), b=P(x1,z0);
+    fctx.fillStyle=css(ROOMS[r.class]||"--r-other"); fctx.fillRect(a[0],a[1],b[0]-a[0],b[1]-a[1]);
+    fctx.strokeStyle=wall; fctx.lineWidth=2; fctx.strokeRect(a[0],a[1],b[0]-a[0],b[1]-a[1]); }
+  const flash=deviceFlash(t);
+  for(const o of home.objects){ const [x0,z0,x1,z1]=o.rect, a=P(x0,z1), b=P(x1,z0), w=b[0]-a[0], h=b[1]-a[1];
+    if(w*h<6 && o.kind==="furniture") continue;
+    if(flash[o.id]){ fctx.fillStyle="#F5A623"; fctx.globalAlpha=0.85; fctx.fillRect(a[0]-2,a[1]-2,w+4,h+4); fctx.globalAlpha=1; }
+    else { fctx.fillStyle=o.kind==="furniture"?furn:"transparent"; if(o.kind==="furniture") fctx.fillRect(a[0],a[1],w,h); else { fctx.strokeStyle=furn; fctx.lineWidth=1.2; fctx.strokeRect(a[0],a[1],w,h);} } }
+  // room names on top of the furniture, in a small pill
+  fctx.font="700 11px "+css("--body"); fctx.textAlign="left";
+  for(const r of home.rooms){ const [x0,z0,x1,z1]=r.rect, a=P(x0,z1), b=P(x1,z0), name=r.class.replace("livingroom","living room").toUpperCase();
+    const w=fctx.measureText(name).width+12, cx=(a[0]+b[0])/2-w/2, cy=a[1]+10;
+    fctx.fillStyle=css("--surface"); fctx.globalAlpha=0.9; fctx.beginPath(); fctx.roundRect?fctx.roundRect(cx,cy,w,18,9):fctx.rect(cx,cy,w,18); fctx.fill(); fctx.globalAlpha=1;
+    fctx.fillStyle=muted; fctx.fillText(name,cx+6,cy+13); }
+  const st=sensorsOn(t);
+  for(const s of home.sensors){ const [x,y]=P(s.x,s.z), lit=!!st[s.id];
+    if(lit){ fctx.beginPath(); fctx.arc(x,y,(s.rh||4.5)*view.s,0,Math.PI*2); fctx.fillStyle=on; fctx.globalAlpha=0.12; fctx.fill(); fctx.globalAlpha=1; }
+    fctx.beginPath(); fctx.arc(x,y,6,0,Math.PI*2); fctx.fillStyle=lit?on:wall; fctx.fill(); fctx.lineWidth=2; fctx.strokeStyle=css("--surface"); fctx.stroke(); }
+  // trail: the last 60 s of movement
+  const i1=bsearch(pathT,t); const violet=css("--violet");
+  if(i1>=0){ let i0=i1; while(i0>0 && t-pathT[i0-1]<60) i0--;
+    for(let i=i0+1;i<=i1;i++){ if(pathT[i]-pathT[i-1]>30 || breaks.some(b=>b>pathT[i-1]&&b<=pathT[i])) continue;
+      const a=P(pathX[i-1],pathZ[i-1]), b=P(pathX[i],pathZ[i]); fctx.strokeStyle=violet; fctx.globalAlpha=0.15+0.75*(i-i0)/(i1-i0+1); fctx.lineWidth=3; fctx.lineCap="round";
+      fctx.beginPath(); fctx.moveTo(a[0],a[1]); fctx.lineTo(b[0],b[1]); fctx.stroke(); } fctx.globalAlpha=1; }
+  const [ax,az]=posAt(t), q=P(ax,az);
+  fctx.beginPath(); fctx.arc(q[0],q[1],9,0,Math.PI*2); fctx.fillStyle=violet; fctx.fill(); fctx.lineWidth=3; fctx.strokeStyle=css("--surface"); fctx.stroke();
+}
+function drawTimeline(){
+  const W=tl.clientWidth, H=tl.clientHeight; tctx.clearRect(0,0,W,H);
+  const X=s=>8+(W-16)*(s-tStart)/(tEnd-tStart), muted=css("--muted");
+  for(const a of day.actions){ const x0=X(a.t0), x1=Math.max(X(a.t1||a.t0),x0+1.2); tctx.fillStyle=ROOMLINE[a.room]||"#9AA6C6"; tctx.globalAlpha=0.85; tctx.fillRect(x0,10,x1-x0,22); }
+  tctx.globalAlpha=1; tctx.fillStyle=muted; tctx.font="11px "+css("--mono"); tctx.textAlign="center";
+  for(let h=Math.ceil(tStart/3600); h*3600<=tEnd; h+=2){ const x=X(h*3600); tctx.fillRect(x,34,1,4); tctx.fillText(String(h%24).padStart(2,"0")+":00",x,50); }
+  const x=X(t); tctx.fillStyle=css("--ink"); tctx.fillRect(x-1,4,2,34);
+}
+const LBL=[["aruba","Aruba"],["milan","Milan"],["cairo","Cairo"],["kyoto7","Kyoto7"],["orange","Orange"]];
+let lastAct=null;
+function sidePanel(){
+  $("#clock").textContent=fmt(t,true);
+  const a=actionAt(t);
+  if(a!==lastAct){ lastAct=a;
+    $("#action").textContent=a?(a.verb+(a.obj?" "+a.obj:"")+(a.to?" → "+a.to:"")):"—";
+    $("#room").textContent=a?("in the "+a.room.replace("livingroom","living room")):"";
+    $("#labels").innerHTML=a?LBL.map(([k,n])=>`<span><i>${n}</i> ${String(a.labels[k]||"—").replace(/_/g," ")}</span>`).join(""):""; }
+  const ev=[]; for(const e of day.motion_events){ if(e.t>t) break; ev.push({t:e.t,txt:e.sensor+" "+e.state,cls:e.state==="ON"?"on":"off"}); }
+  for(const e of day.device_events){ if(e.t>t) break; ev.push({t:e.t,txt:e.cls+" "+e.kind.toUpperCase(),cls:"dev"}); }
+  ev.sort((a,b)=>a.t-b.t);
+  $("#ticker").innerHTML=ev.slice(-7).map(e=>`<div class="${e.cls}">${fmt(e.t,true)}  ${e.txt}</div>`).join("")||"<div class='off'>waiting for the first event…</div>";
+}
+function frame(){ drawFloor(); drawTimeline(); sidePanel(); }
+// seconds of simulated idle time ahead (the agent is still until the next logged movement)
+function idleAhead(tt){ const i=bsearch(pathT,tt); if(i<0) return pathT[0]-tt; return i<pathT.length-1 && pathT[i+1]-pathT[i]>1.2 ? pathT[i+1]-tt : 0; }
+function loop(now){
+  requestAnimationFrame(loop);
+  const dt=(now-last)/1000; last=now;
+  if(day && playing){ let sp=speed; const idle=$("#skipIdle").checked?idleAhead(t):0;
+    if(idle>3) sp=Math.max(speed, idle/0.8);          // fast-forward any still period in under a second
+    t+=dt*sp; if(t>tEnd) t=tStart; frame(); }
+}
+const playBtn=$("#play");
+function setPlaying(p){ playing=p; playBtn.textContent=p?"❚❚":"▶"; playBtn.setAttribute("aria-label",p?"Pause":"Play"); last=performance.now(); }
+playBtn.addEventListener("click",()=>setPlaying(!playing)); setPlaying(playing);
+$("#speed").addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return; speed=+b.dataset.s; $("#speed").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));});
+tl.addEventListener("click",e=>{const r=tl.getBoundingClientRect(); const f=(e.clientX-r.left-8)/(r.width-16); t=tStart+Math.max(0,Math.min(1,f))*(tEnd-tStart); frame();});
+const daySel=$("#daySel"); DAYS.forEach((d,i)=>{const o=document.createElement("option"); o.value=i; o.textContent=d.label; daySel.appendChild(o);});
+daySel.addEventListener("change",()=>loadDay(+daySel.value));
+new ResizeObserver(()=>{ if(day){ sizeCanvases(); frame(); } }).observe(floor);
+
+// ================= pipeline stepper =================
+async function initPipeline(){
+  const pe=await getJSON("data/pipeline_example.json"); const host=$("#steps");
+  pe.steps.forEach((s,i)=>{ const b=document.createElement("button"); b.type="button"; b.innerHTML=`<b>${s.step}</b>${s.title.replace(/\s*\(.*\)$/,"").replace(/:.*$/,"")}`; b.setAttribute("aria-pressed",i===0);
+    b.addEventListener("click",()=>{host.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b)); show(s);}); host.appendChild(b); });
+  function show(s){ $("#excerpt").textContent=s.text_excerpt; $("#stepNote").textContent=s.title+(s.note?" · "+s.note:""); }
+  show(pe.steps[0]);
+}
+
+// ================= ten homes =================
+async function initHomes(){
+  const a=await getJSON("data/aaron_monday_10homes.json"); const host=$("#homes");
+  host._data=a.homes;
+  a.homes.forEach(h=>{ const fig=document.createElement("figure"); const c=document.createElement("canvas"); const cap=document.createElement("figcaption");
+    cap.textContent="home "+h.env; fig.append(c,cap); host.appendChild(fig); h._c=c; });
+  drawHomes();
+}
+function drawHomes(){
+  const host=$("#homes"); if(!host._data) return; const dpr=Math.min(devicePixelRatio,2);
+  for(const h of host._data){ const c=h._c, W=c.clientWidth, H=c.clientHeight; c.width=W*dpr; c.height=H*dpr; const g=c.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0);
+    const [x0,z0,x1,z1]=h.bounds, pad=6, s=Math.min((W-2*pad)/(x1-x0),(H-2*pad)/(z1-z0)), ox=(W-(x1-x0)*s)/2-x0*s, oz=(H-(z1-z0)*s)/2+z1*s, Q=(x,z)=>[ox+x*s,oz-z*s];
+    for(const r of h.rooms){ const [a0,b0,a1,b1]=r.rect, p=Q(a0,b1), q=Q(a1,b0); g.fillStyle=css(ROOMS[r.class]||"--r-other"); g.fillRect(p[0],p[1],q[0]-p[0],q[1]-p[1]); g.strokeStyle=css("--wall"); g.lineWidth=1; g.strokeRect(p[0],p[1],q[0]-p[0],q[1]-p[1]); }
+    g.strokeStyle=css("--violet"); g.lineWidth=1.3; g.globalAlpha=0.75; g.beginPath(); let prev=null;
+    const br=(h.breaks||[]);
+    for(const [tt,x,z] of h.path){ const p=Q(x,z); if(!prev || tt-prev>30 || br.some(b=>b>prev&&b<=tt)) g.moveTo(p[0],p[1]); else g.lineTo(p[0],p[1]); prev=tt; }
+    g.stroke(); g.globalAlpha=1; }
+}
+
+// ================= personas =================
+async function initPeople(){
+  const pp=(await getJSON("data/personas.json")).personas; const host=$("#people");
+  pp.forEach(p=>{ personas[p.id]=p;
+    const el=document.createElement("article"); el.className="person";
+    const short=p.description.length>150?p.description.slice(0,150).replace(/\s+\S*$/,"")+"…":p.description;
+    el.innerHTML=`<header><div class="avatar">${p.name[0]}</div><div><b style="font-family:var(--display)">${p.name}${p.id.includes("_")?" <span class='tag'>"+p.id+"</span>":""}</b><div class="meta">${p.age} · ${p.occupation}</div></div></header>
+      ${p.health&&p.health!=="none"?`<div><span class="tag">${p.health}</span></div>`:""}
+      <p>${short}</p>${p.description.length>150?`<details><summary>Full description</summary><p style="margin-top:6px">${p.description}</p></details>`:""}
+      <div class="meta">${p.n_days} days · homes ${p.homes.join(", ")}</div>`;
+    host.appendChild(el); });
+}
+
+// ================= charts =================
+let R=null; const tip=$("#tip");
+function showTip(e,txt){ tip.hidden=false; tip.textContent=txt; tip.style.left=Math.min(e.clientX+12,innerWidth-tip.offsetWidth-8)+"px"; tip.style.top=(e.clientY-34)+"px"; }
+function hideTip(){ tip.hidden=true; }
+let metric="Macro F1 Score", model="TDOST-Basic", f2metric="F1-macro";
+function drawBars(){
+  if(!R) return; const svg=$("#bars"), W=900, H=340, pl=46, pr=10, pt=22, pb=40;
+  const DS=["Aruba","Milan","Cairo","Kyoto7","Orange"], rows=R.table1.rows.filter(r=>r.metric===metric&&r.model===model);
+  const get=(d,s)=>rows.find(r=>r.dataset===d&&r.setting===s);
+  const ymax=100, Y=v=>pt+(H-pt-pb)*(1-v/ymax), gw=(W-pl-pr)/DS.length, bw=Math.min(54,gw*0.3);
+  const real=css("--real"), blue=css("--blue"), ink=css("--ink"), muted=css("--muted"), line=css("--line");
+  let s="";
+  for(let v=0;v<=100;v+=20){ s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="${line}"/><text x="${pl-8}" y="${Y(v)+4}" text-anchor="end" font-size="12" fill="${muted}" font-family="${css("--mono")}">${v}</text>`; }
+  DS.forEach((d,i)=>{ const cx=pl+gw*i+gw/2, a=get(d,"Real"), b=get(d,"Real+Virtual"); if(!a||!b) return;
+    [[a,cx-bw-3,real],[b,cx+3,blue]].forEach(([r,x,c])=>{ s+=`<rect x="${x}" y="${Y(r.mean)}" width="${bw}" height="${Y(0)-Y(r.mean)}" rx="4" fill="${c}" data-tip="${d} · ${r.setting==="Real"?"real only":"real + AgentSense"}: ${r.mean.toFixed(2)} ± ${r.std.toFixed(2)}"/>`;
+      s+=`<line x1="${x+bw/2}" x2="${x+bw/2}" y1="${Y(r.mean+r.std)}" y2="${Y(Math.max(0,r.mean-r.std))}" stroke="${ink}" stroke-width="1.5"/>`; });
+    const dlt=b.mean-a.mean; s+=`<text x="${cx}" y="${Y(Math.max(a.mean,b.mean)+Math.max(a.std,b.std))-8}" text-anchor="middle" font-size="13" font-weight="700" fill="${dlt>=0?blue:muted}" font-family="${css("--display")}">${dlt>=0?"+":""}${dlt.toFixed(1)}</text>`;
+    s+=`<text x="${cx}" y="${H-14}" text-anchor="middle" font-size="13" fill="${ink}" font-family="${css("--body")}">${d==="Orange"?"Orange4Home":d}</text>`; });
+  svg.innerHTML=s;
+}
+function drawFig2(){
+  if(!R) return; const host=$("#fig2"); host.innerHTML="";
+  const order=["Aruba","Milan","Cairo","Kyoto7","Orange"], real=css("--real"), blue=css("--blue"), muted=css("--muted"), line=css("--line"), ink=css("--ink");
+  for(const ds of order){ const p=R.fig2.panels.find(q=>q.dataset===ds&&q.metric===f2metric); if(!p) continue;
+    const W=240,H=190,pl=34,pr=8,pt=10,pb=30, xs=p.x, xmin=xs[0], xmax=xs[xs.length-1];
+    const all=[...p.Real.lo,...p["Real+Virtual"].lo,...p.Real.hi,...p["Real+Virtual"].hi], ymin=Math.max(0,Math.floor(Math.min(...all)*10)/10), ymx=Math.min(1,Math.ceil(Math.max(...all)*10)/10);
+    const X=v=>pl+(W-pl-pr)*(v-xmin)/(xmax-xmin), Y=v=>pt+(H-pt-pb)*(1-(v-ymin)/(ymx-ymin));
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${ds}">`;
+    for(let v=ymin; v<=ymx+1e-9; v+=0.1){ s+=`<line x1="${pl}" x2="${W-pr}" y1="${Y(v)}" y2="${Y(v)}" stroke="${line}"/><text x="${pl-5}" y="${Y(v)+4}" text-anchor="end" font-size="10" fill="${muted}" font-family="${css("--mono")}">${v.toFixed(1)}</text>`; }
+    for(const [k,c] of [["Real",real],["Real+Virtual",blue]]){ const S=p[k];
+      s+=`<path d="M${xs.map((x,i)=>X(x)+","+Y(S.hi[i])).join("L")}L${xs.map((x,i)=>X(x)+","+Y(S.lo[i])).reverse().join("L")}Z" fill="${c}" opacity="0.18"/>`;
+      s+=`<path d="M${xs.map((x,i)=>X(x)+","+Y(S.y[i])).join("L")}" fill="none" stroke="${c}" stroke-width="2.2"/>`; }
+    s+=`<text x="${pl}" y="${H-8}" font-size="10" fill="${muted}" font-family="${css("--mono")}">5%</text><text x="${W-pr}" y="${H-8}" text-anchor="end" font-size="10" fill="${muted}" font-family="${css("--mono")}">100% real</text>`;
+    s+=`<rect class="hit" x="${pl}" y="${pt}" width="${W-pl-pr}" height="${H-pt-pb}" fill="transparent"/></svg>`;
+    const fig=document.createElement("div"); fig.innerHTML=`<div style="font-family:var(--display);font-weight:600;font-size:.95rem;margin-bottom:2px">${ds==="Orange"?"Orange4Home":ds}</div>`+s; host.appendChild(fig);
+    const svg=fig.querySelector("svg"), hit=fig.querySelector(".hit");
+    hit.addEventListener("mousemove",e=>{ const r=svg.getBoundingClientRect(), vx=(e.clientX-r.left)/r.width*W; let bi=0,bd=1e9; xs.forEach((x,i)=>{const d=Math.abs(X(x)-vx); if(d<bd){bd=d;bi=i;}});
+      showTip(e,`${Math.round(p.x_frac[bi]*100)}% real · real ${p.Real.y[bi].toFixed(3)} · +virtual ${p["Real+Virtual"].y[bi].toFixed(3)}`); });
+    hit.addEventListener("mouseleave",hideTip); }
+}
+function drawAblation(){
+  if(!R) return; const svg=$("#ablation"), rows=R.table2.rows, W=900, H=220, pl=280, pr=70, bh=30, gap=14;
+  const vmin=66, vmax=73, X=v=>pl+(W-pl-pr)*(v-vmin)/(vmax-vmin), muted=css("--muted"), ink=css("--ink"), line=css("--line");
+  let s=""; for(let v=vmin; v<=vmax; v++){ s+=`<line x1="${X(v)}" x2="${X(v)}" y1="8" y2="${H-24}" stroke="${line}"/><text x="${X(v)}" y="${H-6}" text-anchor="middle" font-size="12" fill="${muted}" font-family="${css("--mono")}">${v}</text>`; }
+  // dot plot (the axis does not start at zero, so no bars)
+  const cy=i=>12+i*(bh+gap)+bh/2;
+  s+=`<path d="M${rows.map((r,i)=>X(r.macro_f1)+","+cy(i)).join("L")}" fill="none" stroke="url(#ag)" stroke-width="2.5" stroke-dasharray="2 5" stroke-linecap="round"/>`;
+  rows.forEach((r,i)=>{ const y=cy(i);
+    s+=`<text x="${pl-12}" y="${y+5}" text-anchor="end" font-size="14" fill="${ink}" font-family="${css("--body")}">${r.label}</text>`;
+    s+=`<circle cx="${X(r.macro_f1)}" cy="${y}" r="9" fill="url(#ag)" stroke="${css("--surface")}" stroke-width="3"/>`;
+    s+=`<text x="${X(r.macro_f1)+16}" y="${y+5}" font-size="14" font-weight="700" fill="${ink}" font-family="${css("--display")}">${r.macro_f1.toFixed(2)}</text>`; });
+  svg.innerHTML=`<defs><linearGradient id="ag" x1="0" x2="1"><stop offset="0" stop-color="#22C9E6"/><stop offset=".5" stop-color="#2F6BFF"/><stop offset="1" stop-color="#7B3CF5"/></linearGradient></defs>`+s;
+}
+$("#bars").addEventListener("mousemove",e=>{const r=e.target.closest("rect"); if(r&&r.dataset.tip) showTip(e,r.dataset.tip); else hideTip();});
+$("#bars").addEventListener("mouseleave",hideTip);
+function seg(id,cb){ $(id).addEventListener("click",e=>{const b=e.target.closest("button"); if(!b) return; $(id).querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b)); cb(b);}); }
+seg("#metricSel",b=>{metric=b.dataset.m; drawBars();}); seg("#modelSel",b=>{model=b.dataset.k; drawBars();}); seg("#fig2Sel",b=>{f2metric=b.dataset.m; drawFig2();});
+
+// ================= renders (filled in when available) =================
+async function initRenders(){
+  try{ const rr=await getJSON("media/renders.json"); const host=$("#renders"); host.innerHTML="";
+    for(const r of rr.items||[]){ const el=document.createElement(r.file.endsWith(".mp4")?"video":"img");
+      el.src="media/"+r.file; if(el.tagName==="VIDEO"){el.muted=true; el.loop=true; el.autoplay=!reduce; el.playsInline=true; el.controls=true;} else el.alt=r.caption||"";
+      el.loading="lazy"; host.appendChild(el); } }catch(_){ /* renders not published yet */ }
+}
+
+function redrawAll(){ if(day){ sizeCanvases(); frame(); } drawHomes(); drawBars(); drawFig2(); drawAblation(); }
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",redrawAll);
+
+$("#copyBib").addEventListener("click",async e=>{ const btn=e.currentTarget; try{ await navigator.clipboard.writeText($("#bib").textContent); btn.textContent="Copied"; }
+  catch(_){ const r=document.createRange(); r.selectNodeContents($("#bib")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent="Selected, press Ctrl+C"; } });
+
+(async()=>{
+  try{ await initPeople(); }catch(e){ console.error(e); }
+  loadDay(0).catch(console.error);
+  requestAnimationFrame(loop);
+  initPipeline().catch(console.error); initHomes().catch(console.error); initRenders();
+  try{ R=await getJSON("data/results.json"); drawBars(); drawFig2(); drawAblation(); }catch(e){ console.error(e); }
+})();
+})();
+</script>
+</body>
+</html>

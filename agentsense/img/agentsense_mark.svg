@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="88 4 216 206" width="216" height="206">
+  <defs>
+    <linearGradient id="house" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3E6"/><stop offset="0.55" stop-color="#2F6BFF"/><stop offset="1" stop-color="#7B3CF5"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2BD9E8"/><stop offset="1" stop-color="#1FA9E0"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6E5BFF"/><stop offset="1" stop-color="#7B3CF5"/>
+    </linearGradient>
+    <linearGradient id="bodyg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22C8EC"/><stop offset="0.5" stop-color="#2F6BFF"/><stop offset="1" stop-color="#7B3CF5"/>
+    </linearGradient>
+    <radialGradient id="headg" cx="0.45" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#F4FAFF"/><stop offset="1" stop-color="#C9DBFF"/>
+    </radialGradient>
+    <linearGradient id="word" gradientUnits="userSpaceOnUse" x1="195.8" y1="0" x2="387.9" y2="0">
+      <stop offset="0" stop-color="#1FC3DA"/><stop offset="0.45" stop-color="#2F6BFF"/><stop offset="1" stop-color="#7B3CF5"/>
+    </linearGradient>
+  </defs>
+  <!-- house with chimney -->
+  <path d="M84 100 L196 12 L247 52 V34 H268 V69 L308 100" fill="none" stroke="url(#house)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M96 92 V188 a12 12 0 0 0 12 12 H284 a12 12 0 0 0 12 -12 V92" fill="none" stroke="url(#house)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Wi-Fi antenna -->
+  <path d="M171 50 a36 36 0 0 1 50 0 M182 61 a20 20 0 0 1 28 0" fill="none" stroke="url(#teal)" stroke-width="6.5" stroke-linecap="round"/>
+  <line x1="196" y1="76" x2="196" y2="100" stroke="#2BC3EA" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="196" cy="74" r="7.5" fill="url(#teal)"/>
+  <!-- dotted wires -->
+  <g stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 8.5" fill="none">
+    <line x1="135" y1="112" x2="160" y2="124" stroke="#25C4E6"/>
+    <line x1="138" y1="160" x2="157" y2="152" stroke="#2F9BF0"/>
+    <line x1="257" y1="112" x2="232" y2="124" stroke="#5C5BFF"/>
+    <line x1="254" y1="160" x2="235" y2="152" stroke="#6A4BFF"/>
+  </g>
+  <!-- thermometer -->
+  <g fill="none" stroke="url(#teal)" stroke-width="3.5" stroke-linecap="round">
+    <path d="M115 112 V92 a5 5 0 0 1 10 0 V112 a8.5 8.5 0 1 1 -10 0 Z"/>
+    <line x1="120" y1="98" x2="120" y2="114"/>
+    <line x1="127" y1="96" x2="131" y2="96"/><line x1="127" y1="102" x2="131" y2="102"/>
+  </g>
+  <circle cx="120" cy="118" r="4" fill="url(#teal)"/>
+  <!-- droplet -->
+  <path d="M124 148 C124 148 114 160 114 166 a10 10 0 0 0 20 0 C134 160 124 148 124 148 Z" fill="none" stroke="#2A9EF2" stroke-width="3.8" stroke-linejoin="round"/>
+  <path d="M119 166 a5 5 0 0 0 4 5" fill="none" stroke="#2A9EF2" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- light bulb -->
+  <path d="M266 88 a11 11 0 0 1 7 19.5 V112 H259 V107.5 A11 11 0 0 1 266 88 Z" fill="url(#violet)"/>
+  <rect x="259.5" y="114" width="13" height="4" rx="2" fill="url(#violet)"/>
+  <g stroke="url(#violet)" stroke-width="3" stroke-linecap="round">
+    <line x1="266" y1="82" x2="266" y2="77"/><line x1="255" y1="86" x2="251" y2="82"/><line x1="277" y1="86" x2="281" y2="82"/>
+    <line x1="250" y1="97" x2="245" y2="97"/><line x1="282" y1="97" x2="287" y2="97"/>
+  </g>
+  <!-- leaf -->
+  <path d="M256 174 C254 156 266 146 282 146 C282 162 272 174 256 174 Z" fill="url(#violet)"/>
+  <path d="M258 172 L276 152" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- robot body (sits on the house floor) -->
+  <path d="M146 200 V190 a50 32 0 0 1 100 0 V200 Z" fill="url(#bodyg)"/>
+  <circle cx="196" cy="183" r="10.5" fill="#2F6BFF" stroke="#5FE3F2" stroke-width="3.2"/>
+  <!-- robot head -->
+  <rect x="153" y="98" width="86" height="68" rx="33" fill="url(#headg)"/>
+  <rect x="162" y="109" width="68" height="46" rx="21" fill="#13204B"/>
+  <path d="M176 137 q8 -10 16 0 M200 137 q8 -10 16 0" fill="none" stroke="#3FE3F0" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

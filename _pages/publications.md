@@ -37,7 +37,7 @@ hide_title: true
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz</p>
           <p class="publication-venue">Proceedings of the AAAI Conference on Artificial Intelligence, 40(3), 1891–1899, 2026</p>
-          <div class="publication-links"><a href="https://arxiv.org/abs/2506.11773">Paper ↗</a><a href="https://github.com/ZikangLeng/AgentSense">Code ↗</a></div>
+          <div class="publication-links"><a href="/agentsense/">Project page →</a><a href="https://arxiv.org/abs/2506.11773">Paper ↗</a><a href="https://github.com/ZikangLeng/AgentSense">Code ↗</a></div>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@ hide_title: true
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">IMWUT, 2024</p>
-          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3678545">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
+          <div class="publication-links"><a href="/imugpt/">Project page →</a><a href="https://dl.acm.org/doi/10.1145/3678545">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
       
@@ -182,7 +182,7 @@ hide_title: true
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Hyeokhyen Kwon, Thomas Plötz</p>
           <p class="publication-venue">International Symposium on Wearable Computers (ISWC), 2023</p>
-          <div class="publication-links"><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
+          <div class="publication-links"><a href="/imugpt/">Project page →</a><a href="https://dl.acm.org/doi/10.1145/3594738.3611361">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUGPT">Code ↗</a></div>
         </div>
       </div>
 
