@@ -37,7 +37,7 @@ hide_title: true
       <p>LLMs create diverse personas and routines; embodied agents execute them in an extended VirtualHome simulator instrumented with ambient sensors. Pretraining on this data improves recognition, especially when real data is limited.</p>
       <div class="project-facts"><span><b>5</b> real datasets</span><span><b>Privacy</b> by design</span></div>
       <a class="project-link" href="/agentsense/">Project page <span aria-hidden="true">→</span></a>
-      <a class="project-link" href="https://arxiv.org/abs/2506.11773">Paper <span aria-hidden="true">↗</span></a>
+      <a class="project-link" href="https://doi.org/10.1609/aaai.v40i3.37169">Paper <span aria-hidden="true">↗</span></a>
       <a class="project-link" href="https://github.com/ZikangLeng/AgentSense">Code <span aria-hidden="true">↗</span></a>
     </div>
   </article>
