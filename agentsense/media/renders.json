@@ -1,0 +1,12 @@
+{"items":[
+ {"file":"clip_sam_env18_kitchen_followcam.mp4","caption":"Follow camera: persona Sam walks to the counter, grabs bread and uses the toaster (home 18, Monday 06:50)."},
+ {"file":"clip_sam_env18_kitchen_firstperson.mp4","caption":"The same moment from the agent's own point of view."},
+ {"file":"clip_aaron_env00_bedroom_wake.mp4","caption":"Aaron's Monday, 06:42: picks up his phone, looks at it, puts it on the nightstand (home 0)."},
+ {"file":"clip_aaron_env00_kitchen_breakfast.mp4","caption":"Aaron, 07:30: bread into the toaster for breakfast (home 0)."},
+ {"file":"hero_watch_tv_env29.jpg","caption":"Watching TV on the sofa (home 29)."},
+ {"file":"hero_open_fridge_env18.jpg","caption":"Opening the fridge (home 18)."},
+ {"file":"hero_stove_env00.jpg","caption":"At the stove, burner on (home 0)."},
+ {"file":"hero_sofa_tv_env26.jpg","caption":"Relaxing in the living room (home 26)."},
+ {"file":"overview_iso_env18.jpg","caption":"A whole simulated home, ceilings removed (home 18)."},
+ {"file":"overview_iso_env00.jpg","caption":"Aaron's home from above (home 0)."}
+]}
