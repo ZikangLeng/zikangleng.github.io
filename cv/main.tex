@@ -1,0 +1,472 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{fontawesome}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{multicol} % Add this package at the beginning
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\usepackage{fancyhdr}
+\usepackage{geometry}
+
+\geometry{textwidth=6.5in, textheight=9in, footskip=1cm}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\renewcommand{\headrulewidth}{0pt} % no line in header
+\renewcommand{\footrulewidth}{0.4pt} % line above footer
+\fancyfoot[L]{\footnotesize{*Equal Contribution}} % Custom note on the left side of the footer
+
+\renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.15in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{0pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+% \newcommand{\resumePubheading}[4]{
+%   \vspace{-2pt}\item
+%     \begin{tabular*}{0.97\textwidth}[t]{@{}l@{\extracolsep{\fill}}r}
+%       \begin{minipage}[t]{0.78\textwidth}
+      
+%         \textbf{#1} \\ [-0.3ex]
+%         \textit{\footnotesize#3}
+%       \end{minipage}
+%       &
+%       \begin{minipage}[t]{0.21\textwidth}
+%         \raggedleft #2 \\ [-0.5ex]
+%         \raggedleft \textit{\footnotesize #4}
+%       \end{minipage}
+%       \\
+%     \end{tabular*}\vspace{-7pt}
+% }
+
+\newcommand{\resumePubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{minipage}[t]{0.97\textwidth}
+      \hyphenpenalty=10000\exhyphenpenalty=10000\relax
+      {\linespread{0.9}\selectfont\textbf{#1}}\par\vspace{-0.3ex}
+      \begin{tabular*}{\textwidth}[t]{@{}l@{\extracolsep{\fill}}r@{}}
+        \begin{minipage}[t]{0.76\textwidth}\itshape\footnotesize#3\end{minipage}
+        &
+        \begin{minipage}[t]{0.22\textwidth}\raggedleft #2 \\[-0.5ex] \itshape\footnotesize#4\end{minipage}
+      \end{tabular*}
+    \end{minipage}
+    \vspace{-4pt}
+}
+
+
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+% \begin{center}
+%     \textbf{\Huge \scshape Zikang Leng} \\ \vspace{1pt}
+%     \small 608-719-7502 $|$ {zleng7@gatech.edu} $|$ 
+%     {\href{https://linkedin.com/in/zikang-leng}{\underline{linkedin.com/in/zikang-leng}}} $|$ {\href{https://github.com/ZikangLeng}{\underline{github.com/ZikangLeng}}}
+% \end{center}
+
+\begin{center}
+    \textbf{\Huge \scshape Zikang Leng} \\ \vspace{8pt}
+    
+    \faEnvelopeO \ {zleng7@gatech.edu} $\quad$ 
+    \faHome \ {\href{https://zikangleng.github.io/}{\underline{zikangleng.github.io}}} $\quad$
+    \faLinkedin \ {\href{https://linkedin.com/in/zikang-leng}{\underline{zikang-leng}}} $\quad$
+    \faGithub \ {\href{https://github.com/ZikangLeng}{\underline{ZikangLeng}}} $\quad$
+    \faGraduationCap \ {\href{https://scholar.google.com/citations?user=P6qXmC8AAAAJ&hl=en}{\underline{Scholar}}} 
+\end{center}
+
+
+
+
+\vspace{-0.3in}
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Georgia Institute of Technology }{Atlanta, GA}
+      {PhD in Computer Science}{ Aug. 2024 - Expected May. 2028}
+      \resumeItemListStart
+      \resumeItem{Advised by Prof. Thomas Pl\"{o}tz. Research areas: human activity recognition, multimodal sensing, data generation, LLM agents}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {Georgia Institute of Technology }{Atlanta, GA}
+      {B.S. in Computer Science (Theory \& AI), B.S. in Physics $|$ GPA: 4.0}{Aug. 2021 - May. 2024}
+  \resumeSubHeadingListEnd
+
+
+\vspace{-0.3in}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+    \resumeSubheading
+      {Graduate Research Assistant}{Aug. 2024 - Present}
+      {Georgia Institute of Technology}{Atlanta, GA}
+      \resumeItemListStart
+        \resumeItem{Developed \textbf{AgentSense} (AAAI '26): LLM-guided agents simulated \textbf{18} personas across \textbf{22} home layouts to generate \textbf{250 days} of privacy-preserving smart-home sensor data; pretraining on it beat baselines on \textbf{5} real HAR datasets.}
+        \resumeItem{Built \textbf{EduGage} (IMWUT '26), fusing \textbf{8} synchronized physiological, motion, and eye-tracking signals from 16 participants to reach \textbf{83.75\%} within-1 engagement accuracy, outperforming foundation-model and LLM baselines.}
+        \resumeItem{Benchmarked virtual IMU generation against classical augmentation over \textbf{100} activities and \textbf{22} body locations, across 3 HAR benchmarks and 4 model architectures.}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+  {Machine Learning Engineer Intern}{Aug. 2026 -- Dec. 2026}
+  {BehaviorAI}{Brooklyn, NY}
+  \resumeItemListStart
+    \resumeItem{Developing behavior foundation models and generative methods for human behavior understanding.}
+  \resumeItemListEnd
+
+    \resumeSubheading
+  {Research Intern, Sensor Machine Learning}{Jun. 2025 -- Aug. 2025}
+  {Nokia Bell Labs}{Cambridge, United Kingdom}
+  \resumeItemListStart
+   \resumeItem{Fused IMU and PPG by signal quality at runtime for cardiovascular sensing, distilling from ECG at training.}
+    \resumeItem{Self-supervised SwAV clustering for cross-modal distillation; assignment entropy gives uncertainty (\textbf{UK patent}).}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Undergraduate Research Assistant}{Aug. 2022 -- May 2024}
+  {Georgia Institute of Technology}{Atlanta, GA}
+  \resumeItemListStart
+    \resumeItem{Developed \textbf{IMUGPT} (IMWUT '24), generating virtual IMU data from text via LLMs and motion synthesis; motion filtering and diversity metrics cut generation effort by \textbf{over 50\%}.}
+    \resumeItem{Evaluated alternative data-collection strategies for wheelchair transportation mode detection, reducing reliance on recruiting wheelchair users (Best Paper Nomination, ISWC '24).}
+    \resumeItem{Built a personalized emotion-recognition system using wearable IMUs and virtual motion data for pretraining.}
+    \resumeItem{Built \textbf{FingerSpeller} (ASSETS '23), a camera-free ASL fingerspelling system reaching \textbf{91\%} character accuracy from smart rings; released a 42,288-letter dataset.}
+  \resumeItemListEnd
+
+\resumeSubheading
+  {Machine Learning Research Intern -- SULI}{May 2023 -- Aug. 2023}
+  {Argonne National Laboratory}{Lemont, IL}
+  \resumeItemListStart
+    \resumeItem{Accelerated GNN training for ocean simulation by \textbf{213$\times$} using distributed training across \textbf{256 GPUs}.}
+    \resumeItem{Expanded GNN training data via inverse-distance-weighted interpolation for larger-scale ocean simulation.}
+  \resumeItemListEnd
+      
+    % \resumeSubheading
+    %   {Undergraduate Research Assistant (Dr. Glen Evenbly's Group)}{Nov. 2021 - Jul. 2022}
+    %   {Georgia Institute of Technology}{Atlanta, GA}
+    %   \resumeItemListStart
+    %     \resumeItem{Conducted research on using quantum-inspired tensor network as classifiers for supervised learning}
+    %     \resumeItem{Implemented a training algorithm for the Matrix Product States (MPS) }
+    %     \resumeItem{Tested and compared the performance of MPS, deep neural network (DNN), and convolutional neural network (CNN) on several bitstring rules, MNIST dataset, and Fashion-MNIST datset}
+    %     \resumeItem{Benchmarked how well MPS, DNN, and CNN can learn random instances of each other}
+    %   \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+\vspace{-0.3in}
+\section{Selected Publications}
+\vspace{-0.1in}
+
+    \resumeSubHeadingListStart
+    \resumePubheading
+    {\small{EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning}}{\small{UbiComp/IMWUT '26}}{\footnotesize{\textbf{Zikang Leng*},  Edan Eyal*, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz}}
+    {\href{https://arxiv.org/abs/2605.01238}{[\textcolor{blue}{arxiv}]}}
+
+    \vspace{-0.03in}
+    \resumePubheading
+    {\small{AgentSense: Virtual Sensor Data Generation Using LLM Agents in Simulated Home Environments}}{\small{ AAAI '26}}{\footnotesize{\textbf{Zikang Leng*}, Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz}}
+    {\href{https://ojs.aaai.org/index.php/AAAI/article/view/37169}{[\textcolor{blue}{paper}]}\href{https://github.com/ZikangLeng/AgentSense}{[\textcolor{blue}{code}]}}
+
+    \vspace{-0.03in}
+    \resumePubheading
+    {\small{StitchSense: Smart-Garment Sensing as a Source Domain for Watch-Based Activity Recognition}}{\small{UbiComp/ISWC '26}}{\footnotesize{Ishita Datta, \textbf{Zikang Leng}, Rachit Bhayana, Thomas Plötz}}
+    {\href{https://dl.acm.org/doi/10.1145/3830727.3834837}{[\textcolor{blue}{paper}]}}
+
+
+    \vspace{-0.03in}
+    \resumePubheading
+    {\small{Characterising Topic Familiarity and Query Specificity Using Eye-Tracking Data}}{\small{SIGIR '25}}{\footnotesize{Jiaman He, \textbf{Zikang Leng}, Dana McKay, Johanne R Trippas, Damiano Spina}}
+    {\href{https://dl.acm.org/doi/10.1145/3726302.3730174}{[\textcolor{blue}{paper}]}\href{https://github.com/peanutH/Familiarity-QuerySpec}{[\textcolor{blue}{code}]}}
+
+    \vspace{-0.03in}
+    \resumePubheading
+    {\small{Scaling Human Activity Recognition: A Comparative Evaluation of Synthetic Data Generation and Augmentation Techniques}}{\small{Under Review}}{\footnotesize{\textbf{Zikang Leng}, Archith Iyer, Thomas Plötz}}
+    {\href{https://arxiv.org/abs/2506.07612}{[\textcolor{blue}{arxiv}]}}
+
+    \vspace{-0.03in}
+    \resumePubheading
+    {\small{IMUGPT 2.0: Language-Based Cross Modality Transfer for Sensor-Based Human Activity Recognition}}{UbiComp/IMWUT '24}{\footnotesize{\textbf{Zikang Leng}, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz}}
+    {\href{https://dl.acm.org/doi/10.1145/3678545}{[\textcolor{blue}{paper}]}\href{https://github.com/ZikangLeng/IMUGPT}{[\textcolor{blue}{code}]}}
+
+    % \vspace{0.01in}
+    \resumePubheading
+    {\small{We Need More Data for People with Disabilities: A Comparative Study on Data Collection for Wheelchair Transportation Mode Detection (\textcolor{blue}{Best Paper Nomination)}}}{\small{UbiComp/ISWC '24}}{\small{Sungjin Hwang*, \textbf{Zikang Leng*}, Seungwoo Oh, Kwanguk Kim, Thomas Plötz}}{\href{https://dl.acm.org/doi/10.1145/3675095.3676617}{[\textcolor{blue}{paper}]}}
+
+    % \vspace{0.01in}
+    \resumePubheading
+    {\small{Emotion Recognition on the Go: Utilizing Wearable IMUs for Personalized Emotion Recognition}}{\small{UbiComp'24 HASCA}}{\small{\textbf{Zikang Leng*}, Myeongul Jung*, Sungjin Hwang, Seungwoo Oh, Lizhe Zhang, Thomas Plötz, Kwanguk Kim}}{\href{https://dl.acm.org/doi/abs/10.1145/3675094.3678452}{[\textcolor{blue}{paper}]}}
+    
+    \resumePubheading
+    {\small{FingerSpeller: Camera-Free Text Entry Using Smart Rings for American Sign Language  Fingerspelling Recognition}}
+    {\small{ASSETS '23}}
+    {\small{David Martin*, \textbf{Zikang Leng*}, Tan Gemicioglu, Jon Womack, Jocelyn Heath, Bill Neubauer, Hyeokhyen Kwon, Thomas Plötz, Thad Starner}}
+    {\href{https://dl.acm.org/doi/10.1145/3597638.3614491}{[\textcolor{blue}{paper}]}}
+
+    \vspace{-0.03in}
+        \resumePubheading
+    {\small{Generating Virtual On-body Accelerometer Data from Virtual Textual Descriptions for Human Activity Recognition  (\href{https://www.ubicomp.org/ubicomp-iswc-2023/awards/ubicomp-iswc-2023-awards/}{\textcolor{blue}{Best Paper Honorable Mention)}}}}
+    {\small{UbiComp/ISWC '23}}
+    {\small{\textbf{Zikang Leng}, Hyeokhyen Kwon, Thomas Plötz}}
+    {\href{https://dl.acm.org/doi/10.1145/3594738.3611361}{[\textcolor{blue}{paper}]} \href{https://github.com/ZikangLeng/IMUGPT}{[\textcolor{blue}{code}]} \href{https://www.cc.gatech.edu/news/student-shows-chatgpt-can-save-time-resources-sensory-data-researchers}{[\textcolor{blue}{news}]}}
+
+
+    \vspace{-0.03in}
+      \resumePubheading
+    {\small{On the Utility of Virtual On-body Acceleration Data for Fine-grained Human Activity Recognition}}{\small{UbiComp/ISWC '23}}{\small{\textbf{Zikang Leng}, Yash Jain, Hyeokhyen Kwon, Thomas Plötz}}{\href{https://dl.acm.org/doi/10.1145/3594738.3611364}{[\textcolor{blue}{paper}]}}
+
+    
+
+    \resumeSubHeadingListEnd
+
+
+\vspace{-0.2in}
+\section{Patents}
+\vspace{-0.1in}
+
+    \resumeSubHeadingListStart
+    \resumePubheading
+    {\small{Language-based Cross-modality Transfer System for Generating Virtual Data to Enhance Activity Recognition}}{\small{US 2026/0289407 A1}}{\footnotesize{\textbf{Zikang Leng}, Amitrajit Bhattacharjee, Hrudhai Rajasekhar, Lizhe Zhang, Elizabeth Bruda, Hyeokhyen Kwon, Thomas Plötz}}
+    {}
+    % {\footnotesize{\textbf{Zikang Leng*}, , Megha Thukral*, Yaqi Liu*, Hrudhai Rajasekhar, Shruthi K Hiremath, Jiaman He, Thomas Plötz}}
+    % {\href{https://arxiv.org/pdf/2506.11773}{[\textcolor{blue}{arxiv}]}}
+
+    \resumePubheading
+    {\small{A System for Quality-Aware Multimodal Fusion Representation Learning with Uncertainty Estimation for Health Condition Modelling}}{\small{UK Patent Filed '25}}{\footnotesize{\textbf{Zikang Leng}, Mohammad Malekzadeh, Chi Ian Tang}}
+    {}
+
+
+    \resumeSubHeadingListEnd
+
+
+    
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0pt}
+\vspace{-0.2in}
+\section{Awards}
+     \resumeSubHeadingListStart
+        \resumeProjectHeading
+          {\textbf{NSF Graduate Research Fellowship (GRFP)}}{2024}
+        \resumeItemListStart
+        \resumeItem{Three-year \$37,000 annual stipend plus \$16,000 yearly tuition allowance for outstanding STEM graduate students}
+        \resumeItemListEnd
+    
+
+         \resumeProjectHeading
+          {\textbf{Georgia Tech President's Fellowship}}{2024}
+        \resumeItemListStart
+        \resumeItem{Awarded to select doctoral students for exemplary scholarship and innovation. \$5,500 annual stipend, renewable for three years}
+        \resumeItemListEnd
+          
+          \resumeProjectHeading
+          {\textbf{Georgia Tech Institute Fellowship}}{2024}
+        \resumeItemListStart
+        \resumeItem{Georgia Tech's most prestigious graduate fellowship, awarded to a select few President's Fellowship holders. \$2,000 annual stipend}
+        \resumeItemListEnd
+
+        \resumeProjectHeading
+          {\textbf{Provost's Academic Excellence Award}}{2024}
+        \resumeItemListStart
+        \resumeItem{Top graduating senior from Georgia Tech's College of Computing. \$2,000 award}
+        \resumeItemListEnd
+        
+        
+        % \resumeProjectHeading
+        %   {\textbf{Best Paper Honorable Mention ACM ISWC}}{2023}
+        %   \resumeItemListStart
+        % \resumeItem{Awarded at Ubicomp/ISWC 2023 to recognize papers that stand out for demonstrating innovative research, significant contributions to the field, and high-quality writing}
+        % \resumeItemListEnd
+        
+        \resumeProjectHeading
+          {\textbf{President's Undergraduate Research Awards (Salary and Travel)}}{2023}
+        \resumeItemListStart
+        \resumeItem{\$2,500 to conduct undergraduate research with Georgia Tech faculty, plus a travel grant}
+        \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+% \vspace{-0.2in}
+%-----------PROJECTS-----------
+% \section{Projects}
+%      \resumeSubHeadingListStart
+%         \resumeProjectHeading
+%           {\textbf{American Sign Language Recogniton}}{Mar. 2023 - Apr. 2023}
+%           \resumeItemListStart
+%             \resumeItem{Processed and visualized Google's Isolated Sign Langauge Recogniton dataset (GISLR) from Kaggle}
+%             \resumeItem{Implemented deep learning models such as DNN, LSTM, ConvLSTM, and Transformer to predict signs from 3d poses}
+%             \resumeItem{Benchmarked and analyzed the models performance on GISLR}
+%           \resumeItemListEnd
+     % \resumeProjectHeading
+     %      {\textbf{Movie Box Office Prediction} \href{https://zikangleng.github.io/cs-4641-project/}{[\textcolor{blue}{page}]}}{Jan. 2022 - Apr. 2022}
+     %      \resumeItemListStart
+     %        \resumeItem{Cleaned, preprocessed, and analyzed the Movie Industry dataset from Kaggle using pandas and seaborn}
+     %        \resumeItem{Built multiple models including lasso/ridge regression, random forest, and DNN to predict movie revenue}
+     %        \resumeItem{Finetuned models' hyperparameters and analyzed model performances to determine the optimal model}
+     %      \resumeItemListEnd
+     %  \resumeProjectHeading
+     %      {\textbf{Food Analyzer-HackGT 8} \href{https://devpost.com/software/food-analyzer-mstklp}{[\textcolor{blue}{page}]}}{Oct. 2021}
+     %      \resumeItemListStart
+     %        \resumeItem{Utilized Google's Vision API to allow software determine the food type within user-inputted images}
+     %        \resumeItem{Extracted data of over 400,000 foods from FoodData Central database to allow software to calculate food nutrients}
+     %        \resumeItem{Utilized Qt Designer and PyQt5 to create an user interface for easy data input and visualization}
+     %      \resumeItemListEnd
+    % \resumeSubHeadingListEnd
+
+% \vspace{-0.2in}
+% \section{Relevant Courseworks}
+% \vspace{-0.25in}
+% \begin{multicols}{2} % Start the two-column environment
+% \begin{itemize}[leftmargin=0.0in, label={}]
+% \setlength\itemsep{-0.5em} % Reduces the space between items
+%     \item CS 4644: Deep Learning
+%     \item CS 4641: Machine Learning
+%     \item CS 4540: Advanced Algorithm
+%     \item CS 4510: Automata and Complexity Theory
+%     \item CS 3630: Introduction to Perception and Robotics
+%     \item CS 3600: Introduction to Artificial Intelligence
+% \end{itemize}
+% \end{multicols}
+
+\vspace{-0.2in}
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+% \vspace{0.05in}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+    \item
+     \textbf{Languages}{: Python, C/C++, Java, Bash, LaTeX} \\
+     \textbf{ML \& Deep Learning}{: PyTorch, TensorFlow, Keras, scikit-learn, NumPy, OpenCV, Ray Tune} \\
+     \textbf{Infrastructure}{: Distributed multi-GPU training, CUDA, Docker, Git}
+ \end{itemize}
+
+% \vspace{-0.2in}
+%  \section{Mentored Students}
+%  % \vspace{0.05in}
+%  \begin{itemize}[leftmargin=0.0in, label={}]
+%     \item
+%      \textbf{Masters Students}{: Amitrajit Bhattacharjee, Yaqi Liu, Hrudhai Rajasekhar, Kalyan Salkar, Zijun Wang} \\
+%      % \vspace{0.05in}
+%      \textbf{Undergraduate Students}{: Elizabeth Bruda, Jocelyn Heath, Archith Iyer, Ruijia Peng, Lizhe Zhang}
+    
+%  \end{itemize}
+
+
+\vspace{-0.2in}
+ \section{Mentored Students}
+ \begin{itemize}[leftmargin=0.0in, label={}]
+    \item
+     \small{Mentored 5 masters and 5 undergraduate students; 7 are co-authors on the publications above.}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
