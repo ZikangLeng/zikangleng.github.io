@@ -14,6 +14,19 @@ hide_title: true
 
 <div class="project-grid">
   <article class="project-card project-card--featured">
+    <div class="project-card__media project-card__media--contain"><img src="/images/imudrape-card.jpg" alt="IMUdrape: a generated jogging motion with body-mounted virtual IMUs (blue) and garment-mounted virtual IMUs on a physics-simulated sensor jacket and trousers (orange), next to the matched MIG and LIP garments in front and back views"></div>
+    <div class="project-card__content">
+      <div class="project-meta"><span>Smart garments</span><strong>IMWUT (under review)</strong></div>
+      <h2>IMUdrape</h2>
+      <p class="project-card__lead">Virtual IMU data for sensors sewn into clothing.</p>
+      <p>Sensors in clothing move with the fabric, not the body. IMUdrape generates motion from text, dresses the body in a simulated copy of the deployment's garment, and reads virtual IMUs off the fabric at the real sensor positions. On four clothing-sensor datasets it improves activity recognition and pose estimation over real data alone and over body-mounted virtual data.</p>
+      <div class="project-facts"><span><b>4</b> real datasets</span><span><b>7–46%</b> macro-F1 gain with 1 real subject</span><span><b>Paired</b> garment and body signals</span></div>
+      <a class="project-link" href="/imudrape/">Project page <span aria-hidden="true">→</span></a>
+      <a class="project-link" href="https://github.com/ZikangLeng/IMUdrape">Code <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+
+  <article class="project-card project-card--featured">
     <div class="project-card__media project-card__media--contain"><img src="/images/edugage-setup.jpg" alt="EduGage study setup: a participant wearing a Muse S Athena EEG headband, eSense earbuds, Microsoft Band 2, tau-Ring, and Polar H10 chest strap, seated at the video-learning workstation"></div>
     <div class="project-card__content">
       <div class="project-meta"><span>Engagement sensing</span><strong>IMWUT 2026</strong></div>

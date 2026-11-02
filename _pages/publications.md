@@ -20,6 +20,16 @@ hide_title: true
       <div class="publication-card publication-card--highlight">
         <div class="publication-content">
           <div class="publication-header">
+            <h3 class="publication-title"><a href="/imudrape/">IMUdrape: Generating Garment-Mounted Virtual IMU Data from Text through Physics-Based Cloth Simulation</a></h3>
+          </div>
+          <p class="publication-authors"><strong>Zikang Leng</strong>, Thomas Plötz</p>
+          <p class="publication-venue">Under review at Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)</p>
+          <div class="publication-links"><a href="/imudrape/">Project page →</a><a href="https://github.com/ZikangLeng/IMUdrape">Code ↗</a></div>
+        </div>
+      </div>
+      <div class="publication-card publication-card--highlight">
+        <div class="publication-content">
+          <div class="publication-header">
             <h3 class="publication-title"><a href="https://arxiv.org/abs/2605.01238">EduGage: A Multimodal Dataset and Benchmark for Sensor-Based Momentary Assessment of Engagement in Self-Guided Video Learning</a></h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng*</strong>, Edan Eyal*, Yingtian Shi, Jiaman He, Yaqi Liu, Thomas Plötz</p>

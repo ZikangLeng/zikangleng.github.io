@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 16 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="cloth" x1="0" y1="34" x2="0" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5A35A"/><stop offset="1" stop-color="#E8792B"/>
+    </linearGradient>
+    <linearGradient id="limb" x1="0" y1="50" x2="0" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E9D6C5"/><stop offset="1" stop-color="#CDB39E"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="50" width="180" height="26" rx="13" fill="url(#limb)"/><path d="M38,74 C38,46 66,34 100,34 C134,34 162,46 162,74 C164,104 170,136 176,164 C164,176 150,160 138,170 C126,180 112,164 100,174 C88,184 74,166 62,174 C50,182 36,170 24,164 C30,136 36,104 38,74 Z" fill="url(#cloth)" stroke="#C25A14" stroke-width="3" stroke-linejoin="round"/><path d="M64,62 C60,100 58,136 62,172 M100,48 C99,96 99,132 100,172 M136,62 C140,100 142,136 138,170" fill="none" stroke="#C25A14" stroke-opacity=".45" stroke-width="4" stroke-linecap="round"/><g stroke="#2F6FB5"><line x1="100.0" y1="118.0" x2="152.0" y2="118.0" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 6" opacity="0.95"/><line x1="100.0" y1="118.0" x2="100.0" y2="66.0" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 6" opacity="0.95"/></g><g transform="rotate(-24 100 118)"><rect x="75" y="93" width="50" height="50" rx="9" fill="#1C2B4A"/><rect x="86" y="104" width="28" height="28" rx="4" fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="3"/></g><g stroke="#1C2B4A"><line x1="100.0" y1="118.0" x2="140.2" y2="100.1" stroke-width="7" stroke-linecap="round" opacity="1.0"/><path d="M150.9,95.3 L138.7,109.6 L132.2,94.9 Z" fill="#1C2B4A" stroke="none"/><line x1="100.0" y1="118.0" x2="82.1" y2="77.8" stroke-width="7" stroke-linecap="round" opacity="1.0"/><path d="M77.3,67.1 L91.6,79.3 L76.9,85.8 Z" fill="#1C2B4A" stroke="none"/></g><circle cx="100" cy="118" r="7" fill="#FFFFFF" stroke="#1C2B4A" stroke-width="3"/>
+</svg>
