@@ -103,8 +103,12 @@ select{font:inherit;font-size:.9rem;padding:6px 10px;border-radius:10px;border:1
 .render-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
 .cap{font-size:.86rem;color:var(--muted);line-height:1.5;margin:0}
 .cap b{color:var(--ink);font-weight:600}
-.duo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:18px;align-items:start}
-@media (max-width:860px){.duo{grid-template-columns:1fr}}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.75fr);gap:18px;align-items:start}
+@media (max-width:980px){.duo{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.duo figure:last-child{grid-column:1/-1;max-width:460px;justify-self:center}}
+@media (max-width:600px){.duo{grid-template-columns:1fr}}
+.gal-labels{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-family:var(--display);font-weight:600;font-size:1rem;margin-top:2px}
+.gal-labels span small{display:block;font-family:var(--body);font-weight:400;font-size:.8rem;color:var(--muted)}
+@media (max-width:600px){.gal-labels{font-size:.8rem}.gal-labels span small{font-size:.68rem}}
 .duo figure{display:grid;gap:8px;margin:0}
 /* 3D viewer */
 .viewer{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:16px;align-items:start}
@@ -245,6 +249,13 @@ footer{padding-block:40px;color:var(--muted);font-size:.85rem;text-align:center}
       <figcaption class="cap"><b>Folding laundry.</b> As the arms reach and fold, the sleeves slide along the arms and the jacket hem swings, carrying the garment sensors with them.</figcaption>
     </figure>
     <figure>
+      <div class="vstage" style="--ar:4/3">
+        <video class="loop" data-src="media/pair_ironing" muted loop playsinline preload="none" poster="media/pair_ironing.jpg" width="960" height="720" aria-label="Blender render of a generated ironing motion, without clothing and with body-mounted sensors (left) and in the simulated jacket and trousers with garment-mounted sensors (right)"></video>
+        <div class="chips"><span class="chip"><i style="background:#0072B2"></i>body</span><span class="chip"><i style="background:#E69F00"></i>garment</span></div>
+      </div>
+      <figcaption class="cap"><b>Ironing.</b> Small, repeated arm strokes: the sleeves lag behind the forearms and the jacket front shifts. The ironing board is not shown.</figcaption>
+    </figure>
+    <figure>
       <div class="vstage" style="--ar:1/1">
         <video class="loop" data-src="media/closeup_folding" muted loop playsinline preload="none" poster="media/closeup_folding.jpg" width="720" height="720" aria-label="Blender close-up through a see-through window in the simulated sleeve: a garment sensor with solid axes rotates relative to the dashed axes of the body sensor beneath it"></video>
       </div>
@@ -300,6 +311,13 @@ footer{padding-block:40px;color:var(--muted);font-size:.85rem;text-align:center}
     <h2>One garment per dataset, with its real sensor layout</h2>
     <p class="lede">For each evaluation dataset, IMUdrape rebuilds the garment its participants wore and places virtual sensors at the dataset's real sensor positions, from 4 boards on a loose jacket to all 396 on the MIG sensor suit.</p>
   </div>
+  <figure class="hero-media">
+    <div class="vstage" style="--ar:1152/480">
+      <video class="loop" data-src="media/garments_running" muted loop playsinline preload="none" poster="media/garments_running.jpg" width="1152" height="480" aria-label="Blender render of the four matched garments simulated on running motion, side by side: MIG sensor jacket and trousers, LIP loose jacket, FIP hooded jacket, GarMoCap hooded jacket and trousers, with their sensor boards"></video>
+    </div>
+    <div class="gal-labels" aria-hidden="true"><span>MIG<small>jacket, trousers</small></span><span>LIP<small>loose jacket</small></span><span>FIP<small>hooded jacket</small></span><span>GarMoCap<small>hooded jacket, trousers</small></span></div>
+    <figcaption class="cap"><span class="render-tag">Rendered simulation</span> · The four matched garments simulated on generated running and jogging motion, with each dataset's sensor positions as orange boards.</figcaption>
+  </figure>
   <figure class="fig"><img src="img/garments.webp" alt="The four matched garments sewn onto the SMPL body in the A-pose, front and back views: MIG sensor jacket and trousers with 396 orange sensor boards, LIP loose jacket, FIP loose hooded jacket, GarMoCap hooded jacket and cuffed trousers, with the sensor positions ringed" width="2400" height="535" loading="lazy">
     <figcaption>Front and back views, settled in the A-pose. Orange boards mark the matched dataset's sensor positions.</figcaption></figure>
   <div class="card chart-card">
