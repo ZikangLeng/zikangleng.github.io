@@ -45,7 +45,7 @@ redirect_from:
     <a class="news-item" href="/imudrape/">
       <time datetime="2026-11"><span>Nov</span> 2026</time>
       <span class="news-item__marker" aria-hidden="true"></span>
-      <p><span class="news-item__emoji" aria-hidden="true">🧥</span> Released the project page for <strong>IMUdrape</strong>, which generates garment-mounted virtual IMU data from text through physics-based cloth simulation (under review at <strong>ACM IMWUT</strong>).</p>
+      <p><span class="news-item__emoji" aria-hidden="true">🧥</span> Released the project page for <strong>IMUdrape</strong>, which generates garment-mounted virtual IMU data from text through physics-based cloth simulation (under review).</p>
     </a>
     <a class="news-item" href="https://doi.org/10.1145/3830727.3834837">
       <time datetime="2026-10"><span>Oct</span> 2026</time>
@@ -81,7 +81,7 @@ redirect_from:
   <div class="featured-grid">
     <article class="featured-card featured-card--wide">
       <div class="featured-card__image featured-card__image--contain"><img src="/images/imudrape-card.jpg" alt="IMUdrape: a generated jogging motion with body-mounted virtual IMUs (blue) and garment-mounted virtual IMUs on a physics-simulated sensor jacket and trousers (orange), next to the matched MIG and LIP garments in front and back views"></div>
-      <div class="featured-card__body"><div class="project-meta"><span>Smart garments</span><strong>IMWUT (under review)</strong></div><h3>IMUdrape</h3><p>Sensors sewn into clothing move with the fabric, not the body. IMUdrape generates garment-mounted virtual IMU data from text: generated motion, a simulated copy of the deployment's garment, and virtual IMUs read off the fabric at the real sensor positions, paired with body sensors beneath them.</p><a href="/imudrape/">Project page <span aria-hidden="true">→</span></a><a href="https://github.com/ZikangLeng/IMUdrape">Code <span aria-hidden="true">↗</span></a></div>
+      <div class="featured-card__body"><div class="project-meta"><span>Smart garments</span><strong>Under review</strong></div><h3>IMUdrape</h3><p>Sensors sewn into clothing move with the fabric, not the body. IMUdrape generates garment-mounted virtual IMU data from text: generated motion, a simulated copy of the deployment's garment, and virtual IMUs read off the fabric at the real sensor positions, paired with body sensors beneath them.</p><a href="/imudrape/">Project page <span aria-hidden="true">→</span></a><a href="https://github.com/ZikangLeng/IMUdrape">Code <span aria-hidden="true">↗</span></a></div>
     </article>
     <article class="featured-card">
       <div class="featured-card__image featured-card__image--contain"><img src="/images/edugage-setup.jpg" alt="EduGage study setup: a participant wearing head, ear, wrist, finger, and chest sensors at the video-learning workstation"></div>

@@ -23,7 +23,7 @@ hide_title: true
             <h3 class="publication-title"><a href="/imudrape/">IMUdrape: Generating Garment-Mounted Virtual IMU Data from Text through Physics-Based Cloth Simulation</a></h3>
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Thomas Plötz</p>
-          <p class="publication-venue">Under review at Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT)</p>
+          <p class="publication-venue">Under review</p>
           <div class="publication-links"><a href="/imudrape/">Project page →</a><a href="https://github.com/ZikangLeng/IMUdrape">Code ↗</a></div>
         </div>
       </div>

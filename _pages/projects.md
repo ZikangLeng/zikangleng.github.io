@@ -16,7 +16,7 @@ hide_title: true
   <article class="project-card project-card--featured">
     <div class="project-card__media project-card__media--contain"><img src="/images/imudrape-card.jpg" alt="IMUdrape: a generated jogging motion with body-mounted virtual IMUs (blue) and garment-mounted virtual IMUs on a physics-simulated sensor jacket and trousers (orange), next to the matched MIG and LIP garments in front and back views"></div>
     <div class="project-card__content">
-      <div class="project-meta"><span>Smart garments</span><strong>IMWUT (under review)</strong></div>
+      <div class="project-meta"><span>Smart garments</span><strong>Under review</strong></div>
       <h2>IMUdrape</h2>
       <p class="project-card__lead">Virtual IMU data for sensors sewn into clothing.</p>
       <p>Sensors in clothing move with the fabric, not the body. IMUdrape generates motion from text, dresses the body in a simulated copy of the deployment's garment, and reads virtual IMUs off the fabric at the real sensor positions. On four clothing-sensor datasets it improves activity recognition and pose estimation over real data alone and over body-mounted virtual data.</p>
