@@ -24,7 +24,7 @@ hide_title: true
           </div>
           <p class="publication-authors"><strong>Zikang Leng</strong>, Thomas Plötz</p>
           <p class="publication-venue">Under review</p>
-          <div class="publication-links"><a href="/imudrape/">Project page →</a><a href="https://github.com/ZikangLeng/IMUdrape">Code ↗</a></div>
+          <div class="publication-links"><a href="/imudrape/">Project page →</a><a href="https://arxiv.org/abs/2611.02393">Paper ↗</a><a href="https://github.com/ZikangLeng/IMUdrape">Code ↗</a></div>
         </div>
       </div>
       <div class="publication-card publication-card--highlight">

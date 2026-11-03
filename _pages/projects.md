@@ -22,6 +22,7 @@ hide_title: true
       <p>Sensors in clothing move with the fabric, not the body. IMUdrape generates motion from text, dresses the body in a simulated copy of the deployment's garment, and reads virtual IMUs off the fabric at the real sensor positions. On four clothing-sensor datasets it improves activity recognition and pose estimation over real data alone and over body-mounted virtual data.</p>
       <div class="project-facts"><span><b>4</b> real datasets</span><span><b>7–46%</b> macro-F1 gain with 1 real subject</span><span><b>Paired</b> garment and body signals</span></div>
       <a class="project-link" href="/imudrape/">Project page <span aria-hidden="true">→</span></a>
+      <a class="project-link" href="https://arxiv.org/abs/2611.02393">Paper <span aria-hidden="true">↗</span></a>
       <a class="project-link" href="https://github.com/ZikangLeng/IMUdrape">Code <span aria-hidden="true">↗</span></a>
     </div>
   </article>
